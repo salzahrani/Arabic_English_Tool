@@ -128,13 +128,33 @@ public class CleanArabic {
     }
 
     public static String formatTheArffLine(String text,String cls)
+
     {
-        return "'"+text+"'"+","+cls+"\n";
+        return "'"+cleanTextFunc(text)+"'"+","+cls+"\n";
     }
 
     public static String cleanTextFunc(String str)
     {
-        return str;
+        str = str.replaceAll("\\p{Punct}+", " ");
+        str = str.replaceAll("؟", " ");
+        str = str.replaceAll("،", " ");
+        str = str.replaceAll("–", " ");
+        str = str.replaceAll(":", " ");
+        str = str.replaceAll(";", " ");
+        str = str.replaceAll("»", " ");
+        str = str.replaceAll("«", " ");
+        str = str.replaceAll("\\d+"," ");
+
+
+
+        String[] words = str.replaceAll("^\\p{L}", "").split("\\s+");
+        StringBuilder builder = new StringBuilder();
+        for(String s : words) {
+            builder.append(s);
+            builder.append(" ");
+
+        }
+        return builder.toString();
     }
 }
 
