@@ -9,5 +9,7 @@ public class TheMain
         System.out.println("This is an Arabic String = " + arabic_test_string );
 
         System.out.println("Hello World!");
+
+        System.out.println("This is a new print");
     }
 }
