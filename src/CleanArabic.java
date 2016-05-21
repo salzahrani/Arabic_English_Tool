@@ -112,7 +112,7 @@ public class CleanArabic {
             if (file.isFile() && file.getName().endsWith(".txt")) {
                 try {
                     String content = FileUtils.readFileToString(file,"UTF-8");
-                    String content_after_process = content;
+                    String content_after_process = cleanTextFunc(content);
                     String fileName = file.getName();
                     //System.out.println("File Name: "+ fileName);
 
