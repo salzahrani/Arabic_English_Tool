@@ -27,10 +27,14 @@ public class CleanArabic {
         // To create ARFF there is a two configuration:
         // (1) Create from the original folder
         // (2) Create from from the filtered folder.
-        createARFF(folder1_original,folder2_original,arff_file_original);
-        createARFF(folder1_filter,folder2_filter,arff_file_filter);
+
+        //Copying file (with filters propose)
         copyingTextFilesFromFolderToAnother(folder1_original,folder1_filter);
         copyingTextFilesFromFolderToAnother(folder2_original,folder2_filter);
+
+        //Generating ARFFs
+        createARFF(folder1_original,folder2_original,arff_file_original);
+        createARFF(folder1_filter,folder2_filter,arff_file_filter);
 
     }
 
@@ -84,6 +88,8 @@ public class CleanArabic {
     {
         // It will try creating 2 folders in fiiltered folder as it listed under
         // original, if already created, then it would basically wiped its content.
+
+        initialize_folder(filter_folder);
         initialize_folder(folder1_filter);
         initialize_folder(folder2_filter);
 
