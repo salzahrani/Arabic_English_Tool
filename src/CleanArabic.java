@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CleanArabic {
-    public static String folder1  = "C:/Users/Sultan/IdeaProjects/JavaArabic/corpora/FamilyWomenRisingKids/";
-    public static String folder2  = "C:/Users/Sultan/IdeaProjects/JavaArabic/corpora/ReligionFatwa/";
+    public static String folder1  = "C:/Users/Sultan/IdeaProjects/JavaArabic/corpora/original/FamilyWomenRisingKids/";
+    public static String folder2  = "C:/Users/Sultan/IdeaProjects/JavaArabic/corpora/original/ReligionFatwa/";
 
     public static void main(String[] args)
     {
@@ -144,6 +144,8 @@ public class CleanArabic {
         str = str.replaceAll("»", " ");
         str = str.replaceAll("«", " ");
         str = str.replaceAll("\\d+"," ");
+        str = str.replaceAll("\\w+"," ");
+
 
 
 
