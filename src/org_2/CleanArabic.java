@@ -1,4 +1,4 @@
-/**
+package org_2; /**
  * Created by Sultan on 5/19/2016.
  */
 

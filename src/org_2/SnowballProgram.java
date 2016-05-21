@@ -1,3 +1,5 @@
+package org_2;
+
 import java.lang.reflect.InvocationTargetException;
 
 public class SnowballProgram {
