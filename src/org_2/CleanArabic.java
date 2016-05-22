@@ -39,6 +39,8 @@ public class CleanArabic {
         FilterTextFromSrcToDestFolder(folder2_original,folder2_filter);
 
         // Stemming folder
+        //String stemmerName = "english";
+        //String stemmerName = "turkish";
         String stemmerName = "arabic";
         StemTextFromSrcToDestFolder(folder1_filter,folder1_stemmed,stemmerName);
         StemTextFromSrcToDestFolder(folder2_filter,folder2_stemmed,stemmerName);
