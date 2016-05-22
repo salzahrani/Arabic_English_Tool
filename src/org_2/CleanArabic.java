@@ -5,6 +5,7 @@ package org_2; /**
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
+import java.security.cert.Extension;
 import java.util.ArrayList;
 
 public class CleanArabic {
@@ -20,6 +21,11 @@ public class CleanArabic {
     public static String folder1_filter  = filter_folder + "FamilyWomenRisingKids/";
     public static String folder2_filter  = filter_folder + "ReligionFatwa/";
     public static String arff_file_filter = "./weka/docs_filtered.arff";
+
+    public static String stemmed_folder = corpora_folder + "stemmed/";
+    public static String folder1_stemmed  = stemmed_folder + "FamilyWomenRisingKids/";
+    public static String folder2_stemmed = stemmed_folder + "ReligionFatwa/";
+    public static String arff_file_stemmed = "./weka/docs_stemmed.arff";
     public static void main(String[] args)
     {
 
@@ -29,16 +35,93 @@ public class CleanArabic {
         // (2) Create from from the filtered folder.
 
         //Copying file (with filters propose)
-        copyingTextFilesFromFolderToAnother(folder1_original,folder1_filter);
-        copyingTextFilesFromFolderToAnother(folder2_original,folder2_filter);
+        FilterTextFromSrcToDestFolder(folder1_original,folder1_filter);
+        FilterTextFromSrcToDestFolder(folder2_original,folder2_filter);
+
+        // Stemming folder
+        String stemmerName = "arabic";
+        StemTextFromSrcToDestFolder(folder1_filter,folder1_stemmed,stemmerName);
+        StemTextFromSrcToDestFolder(folder2_filter,folder2_stemmed,stemmerName);
 
         //Generating ARFFs
         createARFF(folder1_original,folder2_original,arff_file_original);
         createARFF(folder1_filter,folder2_filter,arff_file_filter);
+        createARFF(folder1_stemmed,folder2_stemmed,arff_file_stemmed);
 
     }
 
 
+    public static Class stemClass;
+    public static void StemTextFromSrcToDestFolder(String originalFolder,
+                                                   String targetFolder,
+                                                   String stemmerName)
+    {
+        try {
+            // temporarily
+            FilterTextFromSrcToDestFolder(originalFolder, targetFolder);
+
+
+            System.out.println("---------------------------------------------");
+
+
+
+
+            File folder = new File(originalFolder);
+            File[] listOfFiles = folder.listFiles();
+
+
+            for (int i = 0; i < listOfFiles.length; i++) {
+
+                File file = listOfFiles[i];
+                if (file.isFile() && file.getName().endsWith(".txt")) {
+                    stemClass = Class.forName("org_2.ext2." +
+                            stemmerName + "Stemmer");
+                    SnowballStemmer stemmer = (SnowballStemmer) stemClass.newInstance();
+
+                    System.out.println("Stemming file ("+i+") "+ file.getPath());
+                    //String content = FileUtils.readFileToString(file,"UTF-8");
+                    //String content_after_process = cleanTextFunc(content);
+                    String fileName = targetFolder + file.getName();
+                    //writeToFile(fileName,content_after_process);
+
+
+                    InputStream instream;
+                    instream = new FileInputStream(file.getPath());
+                    //instream = System.in;
+                    Reader reader = new InputStreamReader(instream);
+                    reader = new BufferedReader(reader);
+
+                    OutputStream outstream;
+                    outstream = new FileOutputStream(fileName);
+                    //outstream = System.out;
+                    Writer output = new OutputStreamWriter(outstream);
+                    output = new BufferedWriter(output);
+
+
+
+                    StringBuffer input = new StringBuffer();
+                    int character;
+                    while ((character = reader.read()) != -1) {
+                        char ch = (char) character;
+                        if (Character.isWhitespace(ch)) {
+                            stemmer.setCurrent(input.toString());
+                            stemmer.stem();
+                            output.write(stemmer.getCurrent());
+                            output.write(' ');
+                            input.delete(0, input.length());
+                        } else {
+                            input.append(ch < 127 ? Character.toLowerCase(ch) : ch);
+                        }
+                    }
+                    output.flush();
+                }
+            }
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
     /*public static void ReadWriteOneLine(String fileName_toread,String fileName_towrite)
     {
         System.out.println("To read: " + fileName_toread);
@@ -92,6 +175,9 @@ public class CleanArabic {
         initialize_folder(filter_folder);
         initialize_folder(folder1_filter);
         initialize_folder(folder2_filter);
+        initialize_folder(stemmed_folder);
+        initialize_folder(folder1_stemmed);
+        initialize_folder(folder2_stemmed);
 
         // first reading textual content in each folder and wirte it as it is to its
         // corresponding folder.
@@ -100,8 +186,8 @@ public class CleanArabic {
     }
 
 
-    public static void copyingTextFilesFromFolderToAnother(String originalFolder,
-                                                           String targetFolder)
+    public static void FilterTextFromSrcToDestFolder(String originalFolder,
+                                                     String targetFolder)
     {
         File folder = new File(originalFolder);
         File[] listOfFiles = folder.listFiles();
@@ -113,10 +199,8 @@ public class CleanArabic {
                 try {
                     String content = FileUtils.readFileToString(file,"UTF-8");
                     String content_after_process = cleanTextFunc(content);
-                    String fileName = file.getName();
-                    //System.out.println("File Name: "+ fileName);
-
-                    writeToFile(targetFolder+fileName,content_after_process);
+                    String fileName = targetFolder + file.getName();
+                    writeToFile(fileName,content_after_process);
 
                 } catch (IOException e) {
                     e.printStackTrace();

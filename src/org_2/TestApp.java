@@ -1,6 +1,6 @@
 package org_2;
 // http://www.arabicstemmer.com/
-
+// arabic ./test/FWRK1.txt -o FWRK1_f.txt (args...)
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;

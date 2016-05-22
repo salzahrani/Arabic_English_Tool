@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by Sultan on 5/18/2016.
  */
-public class TheMain
+public class old_TheMain
 {
     public static String folder1  = "C:\\Users\\Sultan\\IdeaProjects\\JavaArabic\\corpora\\FamilyWomenRisingKids\\";
     public static String fodler2  = "C:\\Users\\Sultan\\IdeaProjects\\JavaArabic\\corpora\\ReligionFatwa\\";
