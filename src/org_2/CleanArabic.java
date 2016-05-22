@@ -32,6 +32,9 @@ public class CleanArabic {
     public static String folder2_stemmed = stemmed_folder + "ReligionFatwa/";
     public static String arff_file_stemmed = "./weka/docs_stemmed.arff";
 
+    public static Set<String> stoplists = new HashSet<String>();
+    public static String stemmerName = "";
+
     public static void main(String[] args)
     {
 
@@ -39,15 +42,20 @@ public class CleanArabic {
         // To create ARFF there is a two configuration:
         // (1) Create from the original folder
         // (2) Create from from the filtered folder.
+        //stemmerName = "english";
+        //stemmerName = "turkish";
+        stemmerName = "arabic";
+        // Load the designated
+        String file_name_of_stopwords = "./Stoplists/" + stemmerName + "_stoplist.txt";
+
+        loadStopList(file_name_of_stopwords);
 
         //Copying file (with filters propose)
         FilterTextFromSrcToDestFolder(folder1_original,folder1_filter);
         FilterTextFromSrcToDestFolder(folder2_original,folder2_filter);
 
         // Stemming folder
-        //String stemmerName = "english";
-        //String stemmerName = "turkish";
-        String stemmerName = "arabic";
+
         StemTextFromSrcToDestFolder(folder1_filter,folder1_stemmed,stemmerName);
         StemTextFromSrcToDestFolder(folder2_filter,folder2_stemmed,stemmerName);
 
@@ -58,6 +66,20 @@ public class CleanArabic {
 
     }
 
+    public static void loadStopList(String fileName)
+    {
+        try {
+            try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    line = line.trim();
+                    stoplists.add(line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static Class stemClass;
     public static Map stemToSetOfWords;
