@@ -120,20 +120,25 @@ public class CleanArabic {
                             stemmer.stem();
                             String stemmedString = stemmer.getCurrent();
                             output.write(stemmedString);
+                            output.write(' ');
                             //System.out.println("inputString " + inputString + " >> Stemmed: " + stemmedString);
                             if (inputString.equals(stemmedString) == false)
                             {
+                                Set<String> a_set;
 
                                 if(stemToSetOfWords.containsKey(stemmedString)){
                                     //key exists
-                                    Set<String> a_set = (HashSet<String>) stemToSetOfWords.get(stemmedString);
+                                    a_set = (HashSet<String>) stemToSetOfWords.get(stemmedString);
                                     a_set.add(inputString);
+                                   // if(stemmedString.isEmpty()){  output.write(inputString); output.write(' ');}
 
                                 }else{
-                                    stemToSetOfWords.put(stemmedString,new HashSet<String>() );
+                                    a_set = new HashSet<String>();
+                                    stemToSetOfWords.put(stemmedString,a_set);
+                                    a_set.add(inputString);
                                 }
                             }
-                            output.write(' ');
+
                             input.delete(0, input.length());
                         } else {
                             input.append(ch < 127 ? Character.toLowerCase(ch) : ch);
@@ -156,9 +161,9 @@ public class CleanArabic {
         StringBuilder result = new StringBuilder();
         for(String string : a_set) {
             result.append(string);
-            result.append(",");
+            result.append(" , ");
         }
-        return result.length() > 0 ? result.substring(0, result.length() - 1): "";
+        return result.length() > 0 ? result.substring(0, result.length() - 2): "";
     }
 
     public static void generateMapStemFile()
