@@ -33,22 +33,35 @@ public class CleanArabic {
     public static String arff_file_stemmed = "./weka/docs_stemmed.arff";
 
     public static Set<String> stoplists = new HashSet<String>();
+    public static Set<String> stoplists_stemmed = new HashSet<String>();
     public static String stemmerName = "";
 
     public static void main(String[] args)
     {
 
         readCrateSameDirectoriesAsOrgn();
-        // To create ARFF there is a two configuration:
-        // (1) Create from the original folder
-        // (2) Create from from the filtered folder.
-        //stemmerName = "english";
-        //stemmerName = "turkish";
-        stemmerName = "arabic";
-        // Load the designated
-        String file_name_of_stopwords = "./Stoplists/" + stemmerName + "_stoplist.txt";
+        boolean removeStopWord = true;
 
-        loadStopList(file_name_of_stopwords);
+        // Stemming StopWords (Arabic) Already done and file generated
+        /*
+        StemmingStopWords("./StopLists/arabic_stoplist.txt",
+                          "./StopLists/arabic_stoplist_stemmed.txt"
+                          ,"arabic");
+        StemmingStopWords("./StopLists/english_stoplist.txt",
+                "./StopLists/english_stoplist_stemmed.txt"
+                ,"english");
+        StemmingStopWords("./StopLists/turkish_stoplist.txt",
+                "./StopLists/turkesh_stoplist_stemmed.txt"
+                ,"arabic");
+
+        */
+                stemmerName = "arabic";
+        // Load the designated
+        String file_name_of_stopwords_1 = "./Stoplists/" + stemmerName + "_stoplist.txt";
+        String file_name_of_stopwords_2 = "./Stoplists/" + stemmerName + "_stoplist_stemmed.txt";
+
+        if(removeStopWord)
+            loadStopList(file_name_of_stopwords_1,file_name_of_stopwords_2);
 
         //Copying file (with filters propose)
         FilterTextFromSrcToDestFolder(folder1_original,folder1_filter);
@@ -66,10 +79,10 @@ public class CleanArabic {
 
     }
 
-    public static void loadStopList(String fileName)
+    public static void loadStopList(String fileName_1,String fileName_2)
     {
         try {
-            try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            try (BufferedReader br = new BufferedReader(new FileReader(fileName_1))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     line = line.trim();
@@ -79,10 +92,95 @@ public class CleanArabic {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+            try (BufferedReader br = new BufferedReader(new FileReader(fileName_2))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    line = line.trim();
+                    stoplists_stemmed.add(line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static Class stemClass;
-    public static Map stemToSetOfWords;
+    public static Map stemToSetOfWords=  new HashMap();;
+
+    public static void StemmingStopWords(String originalFile,
+                                         String targetFile,
+                                         String stemmerName)
+    {
+        try {
+            // temporarily
+
+            System.out.println("---------------------------------------------");
+
+
+            stemClass = Class.forName("org_2.ext2." +
+                    stemmerName + "Stemmer");
+            SnowballStemmer stemmer = (SnowballStemmer) stemClass.newInstance();
+
+
+            InputStream instream;
+            instream = new FileInputStream(originalFile);
+            //instream = System.in;
+            Reader reader = new InputStreamReader(instream);
+            reader = new BufferedReader(reader);
+
+            OutputStream outstream;
+            outstream = new FileOutputStream(targetFile);
+            //outstream = System.out;
+            Writer output = new OutputStreamWriter(outstream);
+            output = new BufferedWriter(output);
+
+
+
+            StringBuffer input = new StringBuffer();
+            int character;
+            while ((character = reader.read()) != -1)
+            {
+                char ch = (char) character;
+                if (Character.isWhitespace(ch)) {
+                    String inputString = input.toString();
+                    stemmer.setCurrent(inputString);
+                    stemmer.stem();
+                    String stemmedString = stemmer.getCurrent();
+                    output.write(stemmedString);
+                    output.write("\n");
+
+                    //System.out.println("inputString " + inputString + " >> Stemmed: " + stemmedString);
+                    if (inputString.equals(stemmedString) == false) {
+                        Set<String> a_set;
+
+                        if (stemToSetOfWords.containsKey(stemmedString)) {
+                            //key exists
+                            a_set = (HashSet<String>) stemToSetOfWords.get(stemmedString);
+                            a_set.add(inputString);
+                            // if(stemmedString.isEmpty()){  output.write(inputString); output.write(' ');}
+
+                        } else {
+                            a_set = new HashSet<String>();
+                            stemToSetOfWords.put(stemmedString, a_set);
+                            a_set.add(inputString);
+                        }
+                    }
+
+                    input.delete(0, input.length());
+                } else {
+                    input.append(ch < 127 ? Character.toLowerCase(ch) : ch);
+                }
+            }
+            output.flush();
+
+            generateMapStemFile();
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
 
     public static void StemTextFromSrcToDestFolder(String originalFolder,
                                                    String targetFolder,
@@ -141,8 +239,11 @@ public class CleanArabic {
                             stemmer.setCurrent(inputString);
                             stemmer.stem();
                             String stemmedString = stemmer.getCurrent();
-                            output.write(stemmedString);
-                            output.write(' ');
+                            if(!stoplists_stemmed.contains(stemmedString)) // don't write if it is stopword
+                            {
+                                output.write(stemmedString);
+                                output.write(' ');
+                            }
                             //System.out.println("inputString " + inputString + " >> Stemmed: " + stemmedString);
                             if (inputString.equals(stemmedString) == false)
                             {
@@ -152,7 +253,7 @@ public class CleanArabic {
                                     //key exists
                                     a_set = (HashSet<String>) stemToSetOfWords.get(stemmedString);
                                     a_set.add(inputString);
-                                   // if(stemmedString.isEmpty()){  output.write(inputString); output.write(' ');}
+                                    // if(stemmedString.isEmpty()){  output.write(inputString); output.write(' ');}
 
                                 }else{
                                     a_set = new HashSet<String>();
@@ -451,6 +552,7 @@ public class CleanArabic {
         String[] words = str.replaceAll("^\\p{L}", "").split("\\s+");
         StringBuilder builder = new StringBuilder();
         for(String s : words) {
+            if(stoplists.contains(s)) continue;
             builder.append(s);
             builder.append(" ");
 
