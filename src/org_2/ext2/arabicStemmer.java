@@ -1,7 +1,7 @@
 // This file was generated automatically by the Snowball to Java compiler
 // http://snowballstem.org/
 
-package org_2.ext;
+package org_2.ext2;
 
 import org_2.Among;
 

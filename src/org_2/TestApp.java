@@ -1,4 +1,5 @@
 package org_2;
+// http://www.arabicstemmer.com/
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -16,14 +17,19 @@ public class TestApp {
     {
         System.err.println("Usage: TestApp <algorithm> [<input file>] [-o <output file>]");
     }
-
     public static void main(String [] args) throws Throwable {
         if (args.length < 2) {
             usage();
             return;
         }
 
-        Class stemClass = Class.forName("org.tartarus.snowball.ext." +
+        System.out.println("---------------------------------------------");
+        System.out.println("Arg_0 : " +  args[0]);
+        System.out.println("Arg_1 : " +  args[1]);
+        System.out.println("Arg_2 : " +  args[2]);
+        System.out.println("Arg_3 : " +  args[3]);
+
+        Class stemClass = Class.forName("org_2.ext2." +
                 args[0] + "Stemmer");
         SnowballStemmer stemmer = (SnowballStemmer) stemClass.newInstance();
 
