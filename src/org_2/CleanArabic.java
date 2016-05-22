@@ -5,8 +5,13 @@ package org_2; /**
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
-import java.security.cert.Extension;
+import java.util.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+
 
 public class CleanArabic {
 
@@ -26,6 +31,7 @@ public class CleanArabic {
     public static String folder1_stemmed  = stemmed_folder + "FamilyWomenRisingKids/";
     public static String folder2_stemmed = stemmed_folder + "ReligionFatwa/";
     public static String arff_file_stemmed = "./weka/docs_stemmed.arff";
+
     public static void main(String[] args)
     {
 
@@ -54,6 +60,8 @@ public class CleanArabic {
 
 
     public static Class stemClass;
+    public static Map stemToSetOfWords;
+
     public static void StemTextFromSrcToDestFolder(String originalFolder,
                                                    String targetFolder,
                                                    String stemmerName)
@@ -65,8 +73,9 @@ public class CleanArabic {
 
             System.out.println("---------------------------------------------");
 
+            stemToSetOfWords = new HashMap();
 
-
+            //Set<String> a_set = new HashSet<String>();
 
             File folder = new File(originalFolder);
             File[] listOfFiles = folder.listFiles();
@@ -106,9 +115,24 @@ public class CleanArabic {
                     while ((character = reader.read()) != -1) {
                         char ch = (char) character;
                         if (Character.isWhitespace(ch)) {
-                            stemmer.setCurrent(input.toString());
+                            String inputString = input.toString();
+                            stemmer.setCurrent(inputString);
                             stemmer.stem();
-                            output.write(stemmer.getCurrent());
+                            String stemmedString = stemmer.getCurrent();
+                            output.write(stemmedString);
+                            //System.out.println("inputString " + inputString + " >> Stemmed: " + stemmedString);
+                            if (inputString.equals(stemmedString) == false)
+                            {
+
+                                if(stemToSetOfWords.containsKey(stemmedString)){
+                                    //key exists
+                                    Set<String> a_set = (HashSet<String>) stemToSetOfWords.get(stemmedString);
+                                    a_set.add(inputString);
+
+                                }else{
+                                    stemToSetOfWords.put(stemmedString,new HashSet<String>() );
+                                }
+                            }
                             output.write(' ');
                             input.delete(0, input.length());
                         } else {
@@ -118,10 +142,60 @@ public class CleanArabic {
                     output.flush();
                 }
             }
+            generateMapStemFile();
         }catch(Exception e)
         {
             e.printStackTrace();
         }
+
+    }
+
+    public static String getSetString(Set<String> a_set)
+    {
+
+        StringBuilder result = new StringBuilder();
+        for(String string : a_set) {
+            result.append(string);
+            result.append(",");
+        }
+        return result.length() > 0 ? result.substring(0, result.length() - 1): "";
+    }
+
+    public static void generateMapStemFile()
+    {
+
+        try
+        {
+            // create new file
+            File file = new File("C:/Users/Sultan/IdeaProjects/JavaArabic/StemMap/map.txt");
+
+            // if file doesnt exists, then create it
+            if (!file.exists())
+            {
+                file.createNewFile();
+            }
+            System.out.println("Absolute Path: "+file.getAbsolutePath());
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            // write in file
+
+            Iterator entries = stemToSetOfWords.entrySet().iterator();
+            while (entries.hasNext()) {
+                Map.Entry entry = (Map.Entry) entries.next();
+                String key = (String)entry.getKey();
+                Set<String> value = (HashSet<String>)entry.getValue();
+                String string_to_write = "Key = " + key + ", Value = " + getSetString(value);
+                System.out.println(string_to_write);
+                bw.write(string_to_write + "\n");
+            }
+            bw.flush();
+            bw.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+
 
     }
     /*public static void ReadWriteOneLine(String fileName_toread,String fileName_towrite)
