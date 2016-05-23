@@ -39,7 +39,7 @@ public class CleanArabic {
 
     public static void main(String[] args)
     {
-
+        System.out.println("I am in branch 1");
         readCrateSameDirectoriesAsOrgn();
         boolean removeStopWord = true;
 
