@@ -560,5 +560,6 @@ public class CleanArabic {
         }
         return builder.toString();
     }
+
 }
 
