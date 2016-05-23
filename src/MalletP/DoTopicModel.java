@@ -6,10 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Formatter;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
-import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
 
@@ -31,27 +29,39 @@ import cc.mallet.types.LabelSequence;
 
 public class DoTopicModel {
 
-	public DoTopicModel(String folderNameAbs,String stopWprdFile)
+	public DoTopicModel(String folderNameAbs,String stopWordFile,int numberOfIteration
+			,int[] sizes, int numTopics, int maxRnak)
 	{
 		this.folderNameAbs = folderNameAbs;
-		this.stopWprdFile = stopWprdFile;
+		this.stopWordFile = stopWordFile;
+		this.numberOfIteration = numberOfIteration; // 1500 until 4000
+		// tow important factors:
+		this.sizes = sizes;
+		this.numTopics = numTopics;
+		this.maxRnak = maxRnak;
 
 	}
+	public static int numTopics = 0;
+	public static int maxRnak =0;
 
-	public String stopWprdFile = "";
 
+	public int[] sizes= null;
+
+	public String stopWordFile = "";
+	public int numberOfIteration = 0;
 
 	// give the arabic folder path...
 	public String folderNameAbs = "";
 	public ArrayList<String> txtcontentlst = new ArrayList<String>();
 
-	public void run()
+	public ArrayList<String> run()
 	{
 		//first read folder content to an arraylist.
+		ArrayList<String>  topic_list = null;
 
 		try {
 			readFilesToList();
-			System.out.println(topicModeling(txtcontentlst));
+			topic_list = topicModeling(txtcontentlst);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,6 +70,7 @@ public class DoTopicModel {
 			e.printStackTrace();
 		}
 
+		return topic_list;
 	}
 
 	public void readFilesToList() throws IOException
@@ -120,21 +131,22 @@ public class DoTopicModel {
 
 
 
-	public  Set<String> topicModeling(ArrayList<String> docsFileContentArrayList) throws Exception {
+	public  ArrayList<String> topicModeling(ArrayList<String> docsFileContentArrayList) throws Exception {
 		//String pattern_str = "(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
 		//Pattern pattern = Pattern.compile(pattern_str);
 		//java.util.regex.Matcher matcher=null;
 
-		Set<String> alltopicset = new HashSet<String>();
-		int[] sizes = {1};
-		int numTopics = 20;
-		int numberOfIteration = 500;
+		ArrayList<String> alltopicset = new ArrayList<String>();
+		int[] sizes = this.sizes;
+		int numTopics = this.numTopics;
+		int maxRank = this.maxRnak;
+		int numberOfIteration = this.numberOfIteration;
 		ArrayList<Pipe> pipeList = new ArrayList<Pipe>();
 		pipeList.add( new CharSequenceLowercase() );
 		pipeList.add( new CharSequence2TokenSequence(Pattern.compile("\\p{L}[\\p{L}\\p{P}]+\\p{L}")) );
 		//Hungarain is for the liberal, but Slovakian is for the radical "majorriy".
 		//String stopWordsFile = selectedStopwords==1?opt.StopWordsHung: opt.StopWordsSlovak;
-		String stopWordsFile = this.stopWprdFile;
+		String stopWordsFile = this.stopWordFile;
 		pipeList.add( new TokenSequenceRemoveStopwords(new File(stopWordsFile), "UTF-8", false, false, false) );
 		pipeList.add(new TokenSequenceNGrams(sizes));
 		pipeList.add( new TokenSequence2FeatureSequenceWithBigrams() );
@@ -188,6 +200,8 @@ public class DoTopicModel {
 			while (iterator.hasNext() && rank < 25) {
 				IDSorter idCountPair = iterator.next();
 				out.format("%s (%.0f) ", dataAlphabet.lookupObject(idCountPair.getID()), idCountPair.getWeight());
+				alltopicset.add(dataAlphabet.lookupObject(idCountPair.getID())+": Topic: " +
+						+topic+", Keyword number: "+ rank+"");
 				rank++;
 			}
 			System.out.println(out);
