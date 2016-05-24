@@ -12,9 +12,9 @@ import java.util.Set;
  */
 public class TheMain
 {
-    public static String main_folder = "C:/Users/Sultan/IdeaProjects/JavaArabic/";
+    public static String main_folder = "./";
     public static String corpora_folder = main_folder + "corpora/";
-    public static String original_folder = corpora_folder + "original/";
+    public static String original_folder = corpora_folder + "./movie_reviews/";// change here"original/";
     public static String folder1_original = original_folder + "FamilyWomenRisingKids/";
     public static String folder2_original = original_folder + "ReligionFatwa/";
     public static String arff_file_original = "./weka/docs_original.txt";
@@ -31,9 +31,13 @@ public class TheMain
     public static Set<String> stoplists = new HashSet<String>();
     public static Set<String> stoplists_stemmed = new HashSet<String>();
 
+    public static String stemmerName = "";
+
+
     public static void main(String[] args)
     {
-        String stemmerName = "arabic";
+        //stemmerName = "arabic";
+        stemmerName = "english";
         String file_name_of_stopwords_1 = "./Stoplists/" + stemmerName + "_stoplist.txt";
         String file_name_of_stopwords_2 = "./Stoplists/" + stemmerName + "_stoplist_stemmed.txt";
         boolean removeStopWord = true;
@@ -173,13 +177,17 @@ public class TheMain
         str = str.replaceAll("»", " ");
         str = str.replaceAll("«", " ");
         str = str.replaceAll("\\d+"," ");
-        str = str.replaceAll("\\w+"," ");
 
+        String[] words =null;
+        if(stemmerName.equals("arabic"))
+        {
+            words = str.replaceAll("^\\p{L}", "").split("\\s+");
+            str = str.replaceAll("\\w+"," ");
 
+        }
+        else
+            words = str.replaceAll("^\\W", "").split("\\s+");StringBuilder builder = new StringBuilder();
 
-
-        String[] words = str.replaceAll("^\\p{L}", "").split("\\s+");
-        StringBuilder builder = new StringBuilder();
         for(String s : words) {
             if(stoplists.contains(s)) continue;
             builder.append(s);
