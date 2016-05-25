@@ -14,7 +14,7 @@ public class GeneratingOneFileOfFolderMain
 {
     public static String main_folder = "./";
     public static String corpora_folder = main_folder + "corpora/";
-    public static String original_folder = corpora_folder + "./movie_reviews/";// change here"original/";
+    public static String original_folder = corpora_folder + "original_Arabic/" ;  //"./movie_reviews/";// change here"original/";
     public static String folder1_original = original_folder + "FamilyWomenRisingKids/";
     public static String folder2_original = original_folder + "ReligionFatwa/";
     public static String arff_file_original = "./weka/docs_original.txt";
@@ -36,8 +36,8 @@ public class GeneratingOneFileOfFolderMain
 
     public static void main(String[] args)
     {
-        //stemmerName = "arabic";
-        stemmerName = "english";
+        stemmerName = "arabic";
+        //stemmerName = "english";
         String file_name_of_stopwords_1 = "./Stoplists/" + stemmerName + "_stoplist.txt";
         String file_name_of_stopwords_2 = "./Stoplists/" + stemmerName + "_stoplist_stemmed.txt";
         boolean removeStopWord = true;
@@ -90,15 +90,6 @@ public class GeneratingOneFileOfFolderMain
         print_arff(arff_file,cls1,cls2,a_lst_1,a_lst_2);
 
 
-        /*
-        String current = null;
-        try {
-            current = new File( "." ).getCanonicalPath();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Current dir:"+current);
-        */
     }
 
     public static ArrayList<String> readFolderToList(String folderName)
