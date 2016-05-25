@@ -1,58 +1,64 @@
 package phrasese;
 
-/**
- * Created by Sultan on 5/24/2016.
- */
-import org.apache.commons.io.FileUtils;
-
 import java.io.*;
-import java.util.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
-
-
-public class EncodeTextMain {
-
-
-
-    public static Map word_to_code = new HashMap<String,String>();
-    public static Map code_to_word = new HashMap<String,String>();
+/**
+ * Created by Sultan on 5/25/2016.
+ */
+public class DecodeTextMain
+{
+    public static Map word_to_code = null;//= new HashMap<String,String>();
+    public static Map code_to_word = null;//= new HashMap<String,String>();
     public static String serialize_maps_fileName = "./ObjectSerDesr/Maps.ser";
 
     public static void main(String args[])
     {
-        System.out.println("Hello World!");
-        //printTest(); Testing 1000 incremental string
-        //String file_org = "./test/f1.txt";
-        String file_org = "./test/docs_filtered.txt";
-
-        String file_filtered = "./test/f2.txt";
-        String file_endoced = "./test/f3.txt";
-
-        encode_file(file_org,file_filtered,file_endoced);
-        SerializeMaps();
+        deserializeMaps();
     }
 
-    public static void SerializeMaps()
+    public static void deserializeMaps()
     {
-        MapsObject mo = new MapsObject(word_to_code,code_to_word);
+
+        MapsObject mo = null;
         try
         {
-            FileOutputStream fileOut =
-                    new FileOutputStream(serialize_maps_fileName);
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(mo);
-            out.close();
-            fileOut.close();
-            System.out.printf("Serialized data is saved in /tmp/employee.ser");
+            FileInputStream fileIn = new FileInputStream(serialize_maps_fileName);
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            mo = (MapsObject) in.readObject();
+            in.close();
+            fileIn.close();
         }catch(IOException i)
         {
             i.printStackTrace();
+            return;
+        }catch(ClassNotFoundException c)
+        {
+            System.out.println("Employee class not found");
+            c.printStackTrace();
+            return;
         }
+        word_to_code = mo.getWord_to_code();
+        code_to_word = mo.getCode_to_word();
+        System.out.println(word_to_code.size());
+        System.out.println(code_to_word.size());
     }
+
+
+
+    public static String decode_a_word(String str) {
+        String the_word = "";
+        if (code_to_word.containsKey(str)) {
+            return (String)code_to_word.get(str);
+        }
+        return "";
+    }
+
+
+
+
     public static ArrayList<String> readFileToList(String fileName)
     {
         ArrayList<String> lst = new ArrayList<String>();
@@ -68,25 +74,10 @@ public class EncodeTextMain {
         return lst;
     }
 
-
-    public static void printTest()
-    {
-
-
-        for(int i=0;i<1000;i++)
-        {
-            // String oldStr = newStr;
-            // newStr =  incrementedAlpha(newStr);
-            // System.out.println(CIPSPrefexIt(oldStr)+ " | " + CIPSPrefexIt(newStr));
-            System.out.println(NameUtilityGenerator.getNextName());
-        }
-         // returns ['A']
-    }
-
-    public static void encode_file(String file_org,String file_filtered, String file_endoced)
+    public static void decode_file(String file_org,String file_filtered, String file_endoced)
     {
         String content = "";//readFile(file_org);
-        String[] words = null;
+        String[] codes = null;
         ArrayList<String> lst_lines = readFileToList(file_org);
         ArrayList<String> lst_lines_filtered = new ArrayList<String>();
         ArrayList<String> lst_encoded_lines = new ArrayList<String>();
@@ -99,18 +90,20 @@ public class EncodeTextMain {
             lst_a_line_encoded.clear();
 
             content = new String(a_line);
+            /*
             content = content.replaceAll("\\p{N}+", " ");
             content = content.replaceAll("\\w+", " ");
             content = content.replace("\\d+", " ");
-            words = content.split("\\s+");
+            */
+            codes = content.split("\\s+");
             StringBuilder builder_flt = new StringBuilder();
             StringBuilder builder_encoded = new StringBuilder();
 
-            for (String a_word : words)
+            for (String a_code : codes)
             {
-                if(a_word.equals("")) continue;
-                String a_word_encoded  = encode_a_word(a_word);
-                builder_flt.append(a_word);
+                if(a_code.equals("")) continue;
+                String a_word_encoded  = decode_a_word(a_code);
+                builder_flt.append(a_code);
                 builder_flt.append(" ");
                 builder_encoded.append(a_word_encoded);
                 builder_encoded.append(" ");
@@ -200,5 +193,4 @@ public class EncodeTextMain {
         }
 
     }
-
 }
