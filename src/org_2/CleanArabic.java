@@ -18,7 +18,7 @@ public class CleanArabic {
 
     public static String main_folder = "./";
     public static String corpora_folder = main_folder + "corpora/";
-    public static String original_folder = corpora_folder + "original_Arabic/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
+    public static String original_folder = corpora_folder + "original/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
     public static String folder1_original = original_folder + "FamilyWomenRisingKids/";
     public static String folder2_original = original_folder + "ReligionFatwa/";
     public static String arff_file_original = "./weka/docs_original.arff";
