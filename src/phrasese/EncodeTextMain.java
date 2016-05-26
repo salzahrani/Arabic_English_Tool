@@ -29,8 +29,8 @@ public class EncodeTextMain {
         //String file_org = "./test/f1.txt";
         String file_org = "./test/docs_filtered.txt";
 
-        String file_filtered = "./test/f2.txt";
-        String file_endoced = "./test/f3.txt";
+        String file_filtered = "./test/ph2.txt";
+        String file_endoced = "./test/ph3.txt";
 
         encode_file(file_org,file_filtered,file_endoced);
         SerializeMaps();

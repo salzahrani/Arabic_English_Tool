@@ -16,7 +16,16 @@ public class DecodeTextMain
 
     public static void main(String args[])
     {
+        String file_org = "./test/docs_filtered.txt";
+
+        String file_filtered = "./test/ph2.txt";
+        String file_ecoded = "./test/ph3.txt";
+        String file_decoded = "./test/ph4.txt";
+
         deserializeMaps();
+
+        decode_file(file_ecoded,  file_decoded);
+
     }
 
     public static void deserializeMaps()
@@ -36,7 +45,7 @@ public class DecodeTextMain
             return;
         }catch(ClassNotFoundException c)
         {
-            System.out.println("Employee class not found");
+            System.out.println("MapsObject class not found");
             c.printStackTrace();
             return;
         }
@@ -74,20 +83,19 @@ public class DecodeTextMain
         return lst;
     }
 
-    public static void decode_file(String file_org,String file_filtered, String file_endoced)
+    public static void decode_file(String file_ecoded, String file_decoded)
     {
         String content = "";//readFile(file_org);
         String[] codes = null;
-        ArrayList<String> lst_lines = readFileToList(file_org);
-        ArrayList<String> lst_lines_filtered = new ArrayList<String>();
-        ArrayList<String> lst_encoded_lines = new ArrayList<String>();
-        ArrayList<String> lst_a_line = new ArrayList<String>();
+        ArrayList<String> lst_lines_enconded = readFileToList(file_ecoded);
+        ArrayList<String> lst_lines_decoded = new ArrayList<String>();
         ArrayList<String> lst_a_line_encoded = new ArrayList<String>();
+        ArrayList<String> lst_a_line_decoded = new ArrayList<String>();
 
-        for(String a_line:lst_lines)
+        for(String a_line:lst_lines_enconded)
         {
-            lst_a_line.clear();
             lst_a_line_encoded.clear();
+            lst_a_line_decoded.clear();
 
             content = new String(a_line);
             /*
@@ -96,27 +104,27 @@ public class DecodeTextMain
             content = content.replace("\\d+", " ");
             */
             codes = content.split("\\s+");
-            StringBuilder builder_flt = new StringBuilder();
             StringBuilder builder_encoded = new StringBuilder();
+            StringBuilder builder_decoded = new StringBuilder();
 
             for (String a_code : codes)
             {
                 if(a_code.equals("")) continue;
                 String a_word_encoded  = decode_a_word(a_code);
-                builder_flt.append(a_code);
-                builder_flt.append(" ");
-                builder_encoded.append(a_word_encoded);
+                builder_encoded.append(a_code);
                 builder_encoded.append(" ");
+                builder_decoded.append(a_word_encoded);
+                builder_decoded.append(" ");
             }
 
 
 
-            lst_lines_filtered.add(builder_flt.toString());
-            lst_encoded_lines.add(builder_encoded.toString());
+            //lst_lines_filtered.add(builder_encoded.toString());
+            lst_lines_decoded.add(builder_decoded.toString());
 
         }
-        write_lst_File(file_filtered,lst_lines_filtered);
-        write_lst_File(file_endoced,lst_encoded_lines);
+        //write_lst_File(file_filtered,lst_lines_filtered);
+        write_lst_File(file_decoded,lst_lines_decoded);
 
     }
 

@@ -6,12 +6,12 @@ package phrasese;
 public class NameUtilityGenerator {
     public final static char MIN_DIGIT = '0';
     public final static char MAX_DIGIT = '9';
-    public final static char MIN_LETTER = 'A';
-    public final static char MAX_LETTER = 'Z';
+    public final static char MIN_LETTER = 'a';
+    public final static char MAX_LETTER = 'z';
 
-    public static String prestr = "CIPS";
+    public static String prestr = "cips";
 
-    private static String current_subname = "A";
+    private static String current_subname = "a";
 
     public static String getNextName()
     {
