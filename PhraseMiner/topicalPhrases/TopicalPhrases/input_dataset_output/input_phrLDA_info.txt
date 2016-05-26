@@ -1,109 +1,109 @@
 Iterations	:2000	TopicNum:	6
-alphaSum:	6.2051630239828945	betaSum:	104.28
-alpha:	1.3302360807877702 0.9664936637703354 0.7468443894361494 0.7692776489257462 0.8304562388066634 1.561855002256229 
+alphaSum:	5.344507069641103	betaSum:	104.28
+alpha:	1.459392393293596 0.8360622285201327 1.283043777380072 0.7753702336334496 0.5123254296661395 0.4783130071477126 
 testNum:0	testIter	500
-PhraseLDA starts:	1464235514504
-Inference starts:	1464235514675
-training perplexity@0:	3408.0203418877836
+PhraseLDA starts:	1464288647903
+Inference starts:	1464288648025
+training perplexity@0:	3408.0038498291046
 testing perplexity@0:	NaN
-Time:	1464235514708
+Time:	1464288648056
 testing perplexity@50:	NaN
-Time:	1464235515789
+Time:	1464288649043
 testing perplexity@100:	NaN
-Time:	1464235516693
+Time:	1464288649818
 testing perplexity@150:	NaN
-Time:	1464235517594
-training perplexity@2000:	2576.0081475299776
+Time:	1464288650612
+training perplexity@2000:	2528.5555923210954
 testing perplexity@200:	NaN
-Time:	1464235518555
+Time:	1464288651530
 testing perplexity@250:	NaN
-Time:	1464235519701
-training perplexity@2000:	2539.158784879807
+Time:	1464288652169
+training perplexity@2000:	2493.687599231865
 testing perplexity@300:	NaN
-Time:	1464235520889
+Time:	1464288652774
 testing perplexity@350:	NaN
-Time:	1464235522058
-training perplexity@2000:	2504.2140105808057
+Time:	1464288653354
+training perplexity@2000:	2476.3982387411506
 testing perplexity@400:	NaN
-Time:	1464235523215
+Time:	1464288653977
 testing perplexity@450:	NaN
-Time:	1464235524378
-training perplexity@2000:	2488.039377418712
+Time:	1464288654579
+training perplexity@2000:	2462.354369835835
 testing perplexity@500:	NaN
-Time:	1464235525549
+Time:	1464288655180
 testing perplexity@550:	NaN
-Time:	1464235526751
-training perplexity@2000:	2480.414663246131
+Time:	1464288655782
+training perplexity@2000:	2460.5735331598667
 testing perplexity@600:	NaN
-Time:	1464235527917
+Time:	1464288656399
 testing perplexity@650:	NaN
-Time:	1464235529101
-training perplexity@2000:	2474.9786044701855
+Time:	1464288657001
+training perplexity@2000:	2454.5812992377123
 testing perplexity@700:	NaN
-Time:	1464235530268
+Time:	1464288657618
 testing perplexity@750:	NaN
-Time:	1464235531496
-training perplexity@2000:	2467.964534845189
+Time:	1464288658199
+training perplexity@2000:	2450.950703204699
 testing perplexity@800:	NaN
-Time:	1464235532757
+Time:	1464288658809
 testing perplexity@850:	NaN
-Time:	1464235533949
-training perplexity@2000:	2458.1157972978135
+Time:	1464288659388
+training perplexity@2000:	2442.3706808262573
 testing perplexity@900:	NaN
-Time:	1464235535142
+Time:	1464288660024
 testing perplexity@950:	NaN
-Time:	1464235536330
-training perplexity@2000:	2459.9990446679044
+Time:	1464288660632
+training perplexity@2000:	2439.107842132202
 testing perplexity@1000:	NaN
-Time:	1464235537532
+Time:	1464288661265
 testing perplexity@1050:	NaN
-Time:	1464235538697
-training perplexity@2000:	2461.702998341147
+Time:	1464288661853
+training perplexity@2000:	2434.3824936507895
 testing perplexity@1100:	NaN
-Time:	1464235540022
+Time:	1464288662475
 testing perplexity@1150:	NaN
-Time:	1464235541206
-training perplexity@2000:	2440.110355209827
+Time:	1464288663107
+training perplexity@2000:	2430.887358460162
 testing perplexity@1200:	NaN
-Time:	1464235542412
+Time:	1464288663709
 testing perplexity@1250:	NaN
-Time:	1464235543652
-training perplexity@2000:	2436.1212596401892
+Time:	1464288664326
+training perplexity@2000:	2431.6547691981373
 testing perplexity@1300:	NaN
-Time:	1464235544826
+Time:	1464288664940
 testing perplexity@1350:	NaN
-Time:	1464235546011
-training perplexity@2000:	2440.1580700110635
+Time:	1464288665581
+training perplexity@2000:	2427.5161324579763
 testing perplexity@1400:	NaN
-Time:	1464235547170
+Time:	1464288666197
 testing perplexity@1450:	NaN
-Time:	1464235548309
-training perplexity@2000:	2438.353841798673
+Time:	1464288666761
+training perplexity@2000:	2429.282675364605
 testing perplexity@1500:	NaN
-Time:	1464235549462
+Time:	1464288667347
 testing perplexity@1550:	NaN
-Time:	1464235550591
-training perplexity@2000:	2443.0323347791546
+Time:	1464288667934
+training perplexity@2000:	2425.4558078804243
 testing perplexity@1600:	NaN
-Time:	1464235551725
+Time:	1464288668547
 testing perplexity@1650:	NaN
-Time:	1464235552867
-training perplexity@2000:	2434.222444870052
+Time:	1464288669109
+training perplexity@2000:	2424.5282815596156
 testing perplexity@1700:	NaN
-Time:	1464235554014
+Time:	1464288669697
 testing perplexity@1750:	NaN
-Time:	1464235555212
-training perplexity@2000:	2438.146745556301
+Time:	1464288670245
+training perplexity@2000:	2425.1122416673197
 testing perplexity@1800:	NaN
-Time:	1464235556375
+Time:	1464288670831
 testing perplexity@1850:	NaN
-Time:	1464235557588
-training perplexity@2000:	2437.755317081483
+Time:	1464288671432
+training perplexity@2000:	2425.342266141738
 testing perplexity@1900:	NaN
-Time:	1464235558756
+Time:	1464288672065
 testing perplexity@1950:	NaN
-Time:	1464235559907
-training perplexity@2000:	2438.1719144420454
+Time:	1464288672662
+training perplexity@2000:	2418.2403232867887
 testing perplexity@2000:	NaN
-PhraseLDA Done:	1464235561048
+PhraseLDA Done:	1464288673265
 
