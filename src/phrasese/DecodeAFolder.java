@@ -18,7 +18,7 @@ public class DecodeAFolder
     public static Map word_to_code = null;//= new HashMap<String,String>();
     public static Map code_to_word = null;//= new HashMap<String,String>();
     public static String serialize_maps_fileName = "./ObjectSerDesr/Maps.ser";
-    public static String folder_name = "C:/Users/Sultan/Dropbox/Research/Hasan/DifferentFeaturefromkeyword/topicalPhrases/output/outputFiles/";
+    public static String folder_name = "./PhraseMiner/topicalPhrases/output/outputFiles/";
     public static void main(String args[])
     {
         deserializeMaps();

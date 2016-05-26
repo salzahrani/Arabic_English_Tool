@@ -1,0 +1,5 @@
+cipsbz cipsca cipscb cipscc cipscd	50
+cipsz cipsdz cipsea cipseb cipsec	50
+cipsbt cipsbu cipsbv cipsbw cipsbx	50
+cipscvw cipscvx	37
+cipscc cipscd	1
