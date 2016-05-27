@@ -1,4 +1,6 @@
-package org_2; /**
+package org_2;
+
+/**
  * Created by Sultan on 5/19/2016.
  * update on laptop
  */

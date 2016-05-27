@@ -2,6 +2,11 @@ package org_2;
 
 import java.lang.reflect.InvocationTargetException;
 
+/**
+ * Created by Sultan on 5/23/2016.
+ */
+
+
 public class SnowballProgram {
     protected SnowballProgram()
     {
