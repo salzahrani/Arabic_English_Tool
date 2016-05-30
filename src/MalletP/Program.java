@@ -13,14 +13,24 @@ public class Program {
 		String stopfileName = "./Stoplists/english_stoplist.txt";
 		//String stopfileName = "./Stoplists/turkesh_stoplist.txt";
 		//String stopfileName = "./Stoplists/arabic_stoplist.txt";
-		String folderNameAbs = "./corpora/filtered/FamilyWomenRisingKids/";
-		//String folderNameAbs = "./corpora/filtered/ReligionFatwa/";
+		String folderName = "./corpora/filtered/FamilyWomenRisingKids/";
+		//String folderName = "./corpora/filtered/ReligionFatwa/";
 		int numberOfIteration = 500;
 		int[] sizes = {1,2,3,4};
 		int numTopics = 50;
 		int maxRnak = 40;
 
-		doTopicModel(folderNameAbs,stopfileName,numberOfIteration,sizes,numTopics,maxRnak);
+		run(folderName,stopfileName,numberOfIteration,sizes,numTopics,maxRnak);
+	}
+
+	public static void run(String folderNameAbs,String stoplistfileName,
+						   int numberOfIteration, int[] sizes,
+						   int numTopics, int maxRnak )
+	{
+
+
+
+		doTopicModel(folderNameAbs,stoplistfileName,numberOfIteration,sizes,numTopics,maxRnak);
 	}
 
 	public static void doTopicModel(String folderNameAbs,String stoplistfileName,

@@ -20,30 +20,49 @@ public class CleanArabic {
 
     public static String main_folder = "./";
     public static String corpora_folder = main_folder + "corpora/";
-    public static String original_folder = corpora_folder + "original/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
-    public static String folder1_original = original_folder + "FamilyWomenRisingKids/";
-    public static String folder2_original = original_folder + "ReligionFatwa/";
+    public static String original_folder = corpora_folder + "Data/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
+    public static String ph1 = corpora_folder + "Data/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
+    public static String ph2 = corpora_folder + "Data/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
+    public static String ph3 = corpora_folder + "Data/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
+
+    public static String[] folderNames;
+    //public static String folder1_original = original_folder + "FamilyWomenRisingKids/";
+    //public static String folder2_original = original_folder + "ReligionFatwa/";
     public static String arff_file_original = "./weka/docs_original.arff";
 
-    public static String filter_folder = corpora_folder + "filtered/";
-    public static String folder1_filter  = filter_folder + "FamilyWomenRisingKids/";
-    public static String folder2_filter  = filter_folder + "ReligionFatwa/";
+    public static String ph1_folder = corpora_folder + "ph1/";
+    //public static String folder1_filter  = filter_folder + "FamilyWomenRisingKids/";
+    //public static String folder2_filter  = filter_folder + "ReligionFatwa/";
     public static String arff_file_filter = "./weka/docs_filtered.arff";
 
-    public static String stemmed_folder = corpora_folder + "stemmed/";
-    public static String folder1_stemmed  = stemmed_folder + "FamilyWomenRisingKids/";
-    public static String folder2_stemmed = stemmed_folder + "ReligionFatwa/";
-    public static String arff_file_stemmed = "./weka/docs_stemmed.arff";
+    public static String ph2_folder = corpora_folder + "ph2/";
+    //public static String folder1_stemmed  = stemmed_folder + "FamilyWomenRisingKids/";
+    //public static String folder2_stemmed = stemmed_folder + "ReligionFatwa/";
+    //public static String arff_file_stemmed = "./weka/docs_stemmed.arff";
+
+    public static String ph3_folder = corpora_folder + "ph3/";
+    //public static String folder1_stemmed  = stemmed_folder + "FamilyWomenRisingKids/";
+    //public static String folder2_stemmed = stemmed_folder + "ReligionFatwa/";
+    // public static String arff_file_stemmed = "./weka/docs_stemmed.arff";
 
     public static Set<String> stoplists = new HashSet<String>();
     public static Set<String> stoplists_stemmed = new HashSet<String>();
     public static String stemmerName = "";
 
-    public static void main(String[] args)
-    {
-        System.out.println("I am in branch 1");
-        readCrateSameDirectoriesAsOrgn();
+    public static void main(String[] args) {
+        //stemmerName = "English";
+        //stemmerName = "english";
+        //stemmerName = "non";
+        stemmerName = "arabic";
+
         boolean removeStopWord = true;
+        run(stemmerName, removeStopWord);
+    }
+
+    public static void run(String stemmerName, boolean removeStopWord) {
+        folderNames = getFoldersNames();
+        readCrateSameDirectoriesAsOrgn();
+
 
         // Stemming StopWords (Arabic) Already done and file generated
         /*
@@ -58,33 +77,65 @@ public class CleanArabic {
                 ,"arabic");
 
         */
-                //stemmerName = "arabic";
-        stemmerName = "arabic";
+
         // Load the designated
         String file_name_of_stopwords_1 = "./Stoplists/" + stemmerName + "_stoplist.txt";
         String file_name_of_stopwords_2 = "./Stoplists/" + stemmerName + "_stoplist_stemmed.txt";
 
-        if(removeStopWord)
-            loadStopList(file_name_of_stopwords_1,file_name_of_stopwords_2);
-
+        if (removeStopWord)
+            loadStopList(file_name_of_stopwords_1, file_name_of_stopwords_2);
+        //Ph1:
+        // First copying folders from Data to ph1...
         //Copying file (with filters propose)
-        FilterTextFromSrcToDestFolder(folder1_original,folder1_filter);
-        FilterTextFromSrcToDestFolder(folder2_original,folder2_filter);
+        System.out.println("Done from Ph1...............................");
+        for (int i = 0; i < folderNames.length; i++)
+            copyTextFromSrcToDestFolder(original_folder + folderNames[i], ph1_folder + folderNames[i]);
 
-        // Stemming folder
 
-        StemTextFromSrcToDestFolder(folder1_filter,folder1_stemmed,stemmerName);
-        StemTextFromSrcToDestFolder(folder2_filter,folder2_stemmed,stemmerName);
+        System.out.println("Done from Ph2...............................");
+        for (int i = 0; i < folderNames.length; i++)
+            if(removeStopWord)
+                filterTextFromSrcToDestFolder(ph1_folder + folderNames[i], ph2_folder + folderNames[i]);
+            else
+                copyTextFromSrcToDestFolder(ph1_folder + folderNames[i], ph2_folder + folderNames[i]);
+
+        System.out.println("Done from Ph3...............................");
+        for (int i = 0; i < folderNames.length; i++)
+            if(!stemmerName.equals("non") && stemmerName != null)
+                StemTextFromSrcToDestFolder(ph2_folder + folderNames[i], ph3_folder + folderNames[i],stemmerName);
+            else
+                copyTextFromSrcToDestFolder(ph2_folder + folderNames[i], ph3_folder + folderNames[i]);
+
 
         //Generating ARFFs
-        createARFF(folder1_original,folder2_original,arff_file_original);
-        createARFF(folder1_filter,folder2_filter,arff_file_filter);
-        createARFF(folder1_stemmed,folder2_stemmed,arff_file_stemmed);
+        //createARFF(folder1_original, folder2_original, arff_file_original);
+        //createARFF(folder1_filter, folder2_filter, arff_file_filter);
+        //createARFF(folder1_stemmed, folder2_stemmed, arff_file_stemmed);
 
     }
 
-    public static void loadStopList(String fileName_1,String fileName_2)
-    {
+    public static String[] getFoldersNames() {
+        String[] arr_of_fodler = null;
+        ArrayList<String> list_of_folders = new ArrayList<String>();
+
+        File folder = new File(original_folder);
+        File[] listOfFiles = folder.listFiles();
+
+
+        for (int i = 0; i < listOfFiles.length; i++) {
+            File file = listOfFiles[i];
+            if (file.isDirectory()) {
+                String fileName = file.getName()+"/";
+                list_of_folders.add(fileName);
+            }
+        }
+        Collections.sort(list_of_folders);
+        arr_of_fodler = new String[list_of_folders.size()];
+        arr_of_fodler = (String[]) list_of_folders.toArray(arr_of_fodler);
+        return arr_of_fodler;
+    }
+
+    public static void loadStopList(String fileName_1, String fileName_2) {
         try {
             try (BufferedReader br = new BufferedReader(new FileReader(fileName_1))) {
                 String line;
@@ -110,12 +161,12 @@ public class CleanArabic {
     }
 
     public static Class stemClass;
-    public static Map stemToSetOfWords=  new HashMap();;
+    public static Map stemToSetOfWords = new HashMap();
+    ;
 
     public static void StemmingStopWords(String originalFile,
                                          String targetFile,
-                                         String stemmerName)
-    {
+                                         String stemmerName) {
         try {
             // temporarily
 
@@ -140,11 +191,9 @@ public class CleanArabic {
             output = new BufferedWriter(output);
 
 
-
             StringBuffer input = new StringBuffer();
             int character;
-            while ((character = reader.read()) != -1)
-            {
+            while ((character = reader.read()) != -1) {
                 char ch = (char) character;
                 if (Character.isWhitespace(ch)) {
                     String inputString = input.toString();
@@ -179,8 +228,7 @@ public class CleanArabic {
             output.flush();
 
             generateMapStemFile();
-        }catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -188,11 +236,10 @@ public class CleanArabic {
 
     public static void StemTextFromSrcToDestFolder(String originalFolder,
                                                    String targetFolder,
-                                                   String stemmerName)
-    {
+                                                   String stemmerName) {
         try {
             // temporarily
-            FilterTextFromSrcToDestFolder(originalFolder, targetFolder);
+            filterTextFromSrcToDestFolder(originalFolder, targetFolder);
 
 
             System.out.println("---------------------------------------------");
@@ -213,7 +260,7 @@ public class CleanArabic {
                             stemmerName + "Stemmer");
                     SnowballStemmer stemmer = (SnowballStemmer) stemClass.newInstance();
 
-                    System.out.println("Stemming file ("+i+") "+ file.getPath());
+                    System.out.println("Stemming file (" + i + ") " + file.getPath());
                     //String content = FileUtils.readFileToString(file,"UTF-8");
                     //String content_after_process = cleanTextFunc(content);
                     String fileName = targetFolder + file.getName();
@@ -233,7 +280,6 @@ public class CleanArabic {
                     output = new BufferedWriter(output);
 
 
-
                     StringBuffer input = new StringBuffer();
                     int character;
                     while ((character = reader.read()) != -1) {
@@ -243,25 +289,24 @@ public class CleanArabic {
                             stemmer.setCurrent(inputString);
                             stemmer.stem();
                             String stemmedString = stemmer.getCurrent();
-                            if(!stoplists_stemmed.contains(stemmedString)) // don't write if it is stopword
+                            if (!stoplists_stemmed.contains(stemmedString)) // don't write if it is stopword
                             {
                                 output.write(stemmedString);
                                 output.write(' ');
                             }
                             //System.out.println("inputString " + inputString + " >> Stemmed: " + stemmedString);
-                            if (inputString.equals(stemmedString) == false)
-                            {
+                            if (inputString.equals(stemmedString) == false) {
                                 Set<String> a_set;
 
-                                if(stemToSetOfWords.containsKey(stemmedString)){
+                                if (stemToSetOfWords.containsKey(stemmedString)) {
                                     //key exists
                                     a_set = (HashSet<String>) stemToSetOfWords.get(stemmedString);
                                     a_set.add(inputString);
                                     // if(stemmedString.isEmpty()){  output.write(inputString); output.write(' ');}
 
-                                }else{
+                                } else {
                                     a_set = new HashSet<String>();
-                                    stemToSetOfWords.put(stemmedString,a_set);
+                                    stemToSetOfWords.put(stemmedString, a_set);
                                     a_set.add(inputString);
                                 }
                             }
@@ -275,38 +320,33 @@ public class CleanArabic {
                 }
             }
             generateMapStemFile();
-        }catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    public static String getSetString(Set<String> a_set)
-    {
+    public static String getSetString(Set<String> a_set) {
 
         StringBuilder result = new StringBuilder();
-        for(String string : a_set) {
+        for (String string : a_set) {
             result.append(string);
             result.append(" , ");
         }
-        return result.length() > 0 ? result.substring(0, result.length() - 2): "";
+        return result.length() > 0 ? result.substring(0, result.length() - 2) : "";
     }
 
-    public static void generateMapStemFile()
-    {
+    public static void generateMapStemFile() {
 
-        try
-        {
+        try {
             // create new file
             File file = new File("C:/Users/Sultan/IdeaProjects/JavaArabic/StemMap/map.txt");
 
             // if file doesnt exists, then create it
-            if (!file.exists())
-            {
+            if (!file.exists()) {
                 file.createNewFile();
             }
-            System.out.println("Absolute Path: "+file.getAbsolutePath());
+            System.out.println("Absolute Path: " + file.getAbsolutePath());
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
             // write in file
@@ -314,17 +354,15 @@ public class CleanArabic {
             Iterator entries = stemToSetOfWords.entrySet().iterator();
             while (entries.hasNext()) {
                 Map.Entry entry = (Map.Entry) entries.next();
-                String key = (String)entry.getKey();
-                Set<String> value = (HashSet<String>)entry.getValue();
+                String key = (String) entry.getKey();
+                Set<String> value = (HashSet<String>) entry.getValue();
                 String string_to_write = "Key = " + key + ", Value = " + getSetString(value);
                 System.out.println(string_to_write);
                 bw.write(string_to_write + "\n");
             }
             bw.flush();
             bw.close();
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e);
         }
 
@@ -351,21 +389,16 @@ public class CleanArabic {
     }
     */
 
-    public static void initialize_folder(String filderName)
-    {
+    public static void initialize_folder(String filderName) {
         File file = new File(filderName);
-        if (!file.exists())
-        {
-            if (file.mkdir())
-            {
+        if (!file.exists()) {
+            if (file.mkdir()) {
                 System.out.println("Directory is created!");
-            } else
-            {
+            } else {
                 System.out.println("Failed to create directory!");
             }
-        }
-        else
-        {
+        } else {
+            // deleting existing files
             File[] flist = file.listFiles();
             if (flist != null && flist.length > 0) {
                 for (File f : flist) {
@@ -375,17 +408,43 @@ public class CleanArabic {
         }
 
     }
+
+    public static void delete_folder_contents(String filderName)
+    {
+        File fldr = new File(filderName);
+        String[]entries = fldr.list();
+        for(String s: entries){
+            File currentFile = new File(fldr.getPath(),s);
+            currentFile.delete();
+        }
+    }
+
     public static void readCrateSameDirectoriesAsOrgn()
     {
         // It will try creating 2 folders in fiiltered folder as it listed under
         // original, if already created, then it would basically wiped its content.
 
-        initialize_folder(filter_folder);
-        initialize_folder(folder1_filter);
-        initialize_folder(folder2_filter);
-        initialize_folder(stemmed_folder);
-        initialize_folder(folder1_stemmed);
-        initialize_folder(folder2_stemmed);
+
+        initialize_folder(ph1_folder);
+        for(String str:folderNames)
+        {
+            String a_folder_name = ph1_folder + str;
+            initialize_folder(a_folder_name);
+        }
+
+        initialize_folder(ph2_folder);
+        for(String str:folderNames)
+        {
+            String a_folder_name = ph2_folder + str;
+            initialize_folder(a_folder_name);
+        }
+
+        initialize_folder(ph3_folder);
+        for(String str:folderNames)
+        {
+            String a_folder_name = ph3_folder + str;
+            initialize_folder(a_folder_name);
+        }
 
         // first reading textual content in each folder and wirte it as it is to its
         // corresponding folder.
@@ -394,7 +453,7 @@ public class CleanArabic {
     }
 
 
-    public static void FilterTextFromSrcToDestFolder(String originalFolder,
+    public static void filterTextFromSrcToDestFolder(String originalFolder,
                                                      String targetFolder)
     {
         File folder = new File(originalFolder);
@@ -409,6 +468,30 @@ public class CleanArabic {
                     String content_after_process = cleanTextFunc(content);
                     String fileName = targetFolder + file.getName();
                     writeToFile(fileName,content_after_process);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+    /* do somthing with content */
+            }
+        }
+
+    }
+
+    public static void copyTextFromSrcToDestFolder(String originalFolder,
+                                                     String targetFolder)
+    {
+        File folder = new File(originalFolder);
+        File[] listOfFiles = folder.listFiles();
+        ArrayList<String> a_list = new ArrayList<String>();
+
+        for (int i = 0; i < listOfFiles.length; i++) {
+            File file = listOfFiles[i];
+            if (file.isFile() && file.getName().endsWith(".txt")) {
+                try {
+                    String content = FileUtils.readFileToString(file,"UTF-8");
+                    String fileName = targetFolder + file.getName();
+                    writeToFile(fileName,content);
 
                 } catch (IOException e) {
                     e.printStackTrace();
