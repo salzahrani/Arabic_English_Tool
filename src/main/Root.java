@@ -3,30 +3,56 @@ package main;
 /**
  * Created by Sultan on 5/28/2016.
  */
+
 import MalletP.*;
+import preprocess.*;
+
 public class Root
     {
         public static void main(String[] args)
         {
-            // Phasae1: stopword removel stemming/nonstemming
+            // Part1: stopword removel stemming/nonstemming
+
+            preprocess.Program  prep_p = new preprocess.Program();
+
+            String stemmerName = "english";
+            //stemmerName = "arabic";
+
+            String org_folder = "English_Corpus/";
+            //org_folder = "Arabic_Corpus/";
+
+            boolean removeStopWord = true;
+            boolean stemwords = false;
+
+            prep_p.run(org_folder,stemmerName, removeStopWord,stemwords);
+
+
 
 
 
             //LDA configuration...
 
-            String stopfileName = "./Stoplists/english_stoplist.txt";
-            //String stopfileName = "./Stoplists/turkesh_stoplist.txt";
-            //String stopfileName = "./Stoplists/arabic_stoplist.txt";
-            String folderName = "./corpora/filtered/FamilyWomenRisingKids/";
-            //String folderName = "./corpora/filtered/ReligionFatwa/";
+            String stopfileName = "";
+            if(stemmerName.equals("english"))
+                stopfileName = "./Stoplists/english_stoplist.txt";
+            else
+                stopfileName = "./Stoplists/arabic_stoplist.txt";
             int numberOfIteration = 500;
             int[] sizes = {1,2,3,4};
             int numTopics = 50;
             int maxRnak = 40;
 
-            MalletP.Program m_p = new MalletP.Program();
+            String main_folder = "./";
+            String corpora_folder = main_folder + "corpora/";
+            String original_folder = corpora_folder + "ph3/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
 
-            m_p.run(folderName,stopfileName,numberOfIteration,sizes,numTopics,maxRnak);
+
+            MalletP.Program m_p = new MalletP.Program();
+            m_p.run(original_folder,stopfileName,numberOfIteration,sizes,numTopics,maxRnak);
+
+            // Topic Mine
+
+
 
 
         }

@@ -99,6 +99,7 @@ public class EncodeTextMain {
             lst_a_line_encoded.clear();
 
             content = new String(a_line);
+            content = content.replaceAll("\\p{P}+", " ");
             content = content.replaceAll("\\p{N}+", " ");
             content = content.replaceAll("\\w+", " ");
             content = content.replace("\\d+", " ");
