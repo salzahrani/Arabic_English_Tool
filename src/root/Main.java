@@ -56,9 +56,9 @@ public class Main
             String main_folder = "./";
             String corpora_folder = main_folder + "corpora/";
             String original_folder = corpora_folder + "ph3/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
+            String stemmerClass = "english";
+            p_phm.run(original_folder,stemmerClass);
 
-            p_phm.run(original_folder);
-            p_phm.run("");
 
         }
 }

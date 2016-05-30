@@ -1,0 +1,183 @@
+كلنا شركاء في الوطن اخبار سوريا -أخبار سورية – Syria news -تظاهرات سوريا
+أخبار محلية
+أخبار عربية
+أخبار دولية
+Selected articles from Intl media
+فيديو
+ثقافة وفنون
+اقتصاد
+من نحن؟
+الطريق الى دمشق
+محليات
+مقالات وتحليلات
+RSS Feed
+Facebook
+Twitter
+Archived: Everything Is Rigged: The Biggest Price-Fixing Scandal Ever
+– Posted on 2013/04/28 Posted in: Selected articles from Intl media
+The Illuminati were amateurs. The second huge financial scandal of the year reveals the real international conspiracy: There’s no price the big banks can’t fix
+By  Matt Taibbi
+April 25, 2013 1:00 PM ET
+Conspiracy theorists of the world, believers in the hidden hands of the Rothschilds and the Masons and the Illuminati, we skeptics owe you an apology. You were right. The players may be a little different, but your basic premise is correct: The world is a rigged game. We found this out in recent months, when a series of related corruption stories spilled out of the financial sector, suggesting the world’s largest banks may be fixing the prices of, well, just about everything.
+You may have heard of the Libor scandal, in which at least three – and perhaps as many as 16 – of the name-brand too-big-to-fail banks have been manipulating global interest rates, in the process messing around with the prices of upward of $500 trillion (that’s trillion, with a “t”) worth of financial instruments. When that sprawling con burst into public view last year, it was easily the biggest financial scandal in history – MIT professor Andrew Lo even said it “dwarfs by orders of magnitude any financial scam in the history of markets.”
+That was bad enough, but now Libor may have a twin brother. Word has leaked out that the London-based firm ICAP, the world’s largest broker of interest-rate swaps, is being investigated by American authorities for behavior that sounds eerily reminiscent of the Libor mess. Regulators are looking into whether or not a small group of brokers at ICAP may have worked with up to 15 of the world’s largest banks to manipulate ISDAfix, a benchmark number used around the world to calculate the prices of interest-rate swaps.
+Interest-rate swaps are a tool used by big cities, major corporations and sovereign governments to manage their debt, and the scale of their use is almost unimaginably massive. It’s about a $379 trillion market, meaning that any manipulation would affect a pile of assets about 100 times the size of the United States federal budget.
+It should surprise no one that among the players implicated in this scheme to fix the prices of interest-rate swaps are the same megabanks – including Barclays, UBS, Bank of America, JPMorgan Chase and the Royal Bank of Scotland – that serve on the Libor panel that sets global interest rates. In fact, in recent years many of these banks have already paid multimillion-dollar settlements for anti-competitive manipulation of one form or another (in addition to Libor, some were caught up in an anti-competitive scheme, detailed in Rolling Stone last year , to rig municipal-debt service auctions). Though the jumble of financial acronyms sounds like gibberish to the layperson, the fact that there may now be price-fixing scandals involving both Libor and ISDAfix suggests a single, giant mushrooming conspiracy of collusion and price-fixing hovering under the ostensibly competitive veneer of Wall Street culture.
+The Scam Wall Street Learned From the Mafia
+Why? Because Libor already affects the prices of interest-rate swaps, making this a manipulation-on-manipulation situation. If the allegations prove to be right, that will mean that swap customers have been paying for two different layers of price-fixing corruption. If you can imagine paying 20 bucks for a crappy PB&J because some evil cabal of agribusiness companies colluded to fix the prices of both peanuts and peanut butter, you come close to grasping the lunacy of financial markets where both interest rates and interest-rate swaps are being manipulated at the same time, often by the same banks.
+“It’s a double conspiracy,” says an amazed Michael Greenberger, a former director of the trading and markets division at the Commodity Futures Trading Commission and now a professor at the University of Maryland. “It’s the height of criminality.”
+The bad news didn’t stop with swaps and interest rates. In March, it also came out that two regulators – the CFTC here in the U.S. and the Madrid-based International Organization of Securities Commissions – were spurred by the Libor revelations to investigate the possibility of collusive manipulation of gold and silver prices. “Given the clubby manipulation efforts we saw in Libor benchmarks, I assume other benchmarks – many other benchmarks – are legit areas of inquiry,” CFTC Commissioner Bart Chilton said.
+But the biggest shock came out of a federal courtroom at the end of March – though if you follow these matters closely, it may not have been so shocking at all – when a landmark class-action civil lawsuit against the banks for Libor-related offenses was dismissed. In that case, a federal judge accepted the banker-defendants’ incredible argument: If cities and towns and other investors lost money because of Libor manipulation, that was their own fault for ever thinking the banks were competing in the first place.
+“A farce,” was one antitrust lawyer’s response to the eyebrow-raising dismissal.
+“Incredible,” says Sylvia Sokol, an attorney for Constantine Cannon, a firm that specializes in antitrust cases.
+All of these stories collectively pointed to the same thing: These banks, which already possess enormous power just by virtue of their financial holdings – in the United States, the top six banks, many of them the same names you see on the Libor and ISDAfix panels, own assets equivalent to 60 percent of the nation’s GDP – are beginning to realize the awesome possibilities for increased profit and political might that would come with colluding instead of competing. Moreover, it’s increasingly clear that both the criminal justice system and the civil courts may be impotent to stop them, even when they do get caught working together to game the system.
+If true, that would leave us living in an era of undisguised, real-world conspiracy, in which the prices of currencies, commodities like gold and silver, even interest rates and the value of money itself, can be and may already have been dictated from above. And those who are doing it can get away with it. Forget the Illuminati – this is the real thing, and it’s no secret. You can stare right at it, anytime you want.
+the banks found a loophole, a basic flaw in the machine. Across the financial system, there are places where prices or official indices are set based upon unverified data sent in by private banks and financial companies. In other words, we gave the players with incentives to game the system institutional roles in the economic infrastructure.
+Libor, which measures the prices banks charge one another to borrow money, is a perfect example, not only of this basic flaw in the price-setting system but of the weakness in the regulatory framework supposedly policing it. Couple a voluntary reporting scheme with too-big-to-fail status and a revolving-door legal system, and what you get is unstoppable corruption.
+Every morning, 18 of the world’s biggest banks submit data to an office in London about how much they believe they would have to pay to borrow from other banks. The 18 banks together are called the “Libor panel,” and when all of these data from all 18 panelist banks are collected, the numbers are averaged out. What emerges, every morning at 11:30 London time, are the daily Libor figures.
+Banks submit numbers about borrowing in 10 different currencies across 15 different time periods, e.g., loans as short as one day and as long as one year. This mountain of bank-submitted data is used every day to create benchmark rates that affect the prices of everything from credit cards to mortgages to currencies to commercial loans (both short- and long-term) to swaps.
+Gangster Bankers Broke Every Law in the Book
+Dating back perhaps as far as the early Nineties, traders and others inside these banks were sometimes calling up the company geeks responsible for submitting the daily Libor numbers (the “Libor submitters”) and asking them to fudge the numbers. Usually, the gimmick was the trader had made a bet on something – a swap, currencies, something – and he wanted the Libor submitter to make the numbers look lower (or, occasionally, higher) to help his bet pay off.
+Famously, one Barclays trader monkeyed with Libor submissions in exchange for a bottle of Bollinger champagne, but in some cases, it was even lamer than that. This is from an exchange between a trader and a Libor submitter at the Royal Bank of Scotland:
+SWISS FRANC TRADER: can u put 6m swiss libor in low pls?…
+PRIMARY SUBMITTER: Whats it worth
+SWSISS FRANC TRADER: ive got some sushi rolls from yesterday?…
+PRIMARY SUBMITTER: ok low 6m, just for u
+SWISS FRANC TRADER: wooooooohooooooo. . . thatd be awesome
+Screwing around with world interest rates that affect billions of people in exchange for day-old sushi – it’s hard to imagine an image that better captures the moral insanity of the modern financial-services sector.
+Hundreds of similar exchanges were uncovered when regulators like Britain’s Financial Services Authority and the U.S. Justice Department started burrowing into the befouled entrails of Libor. The documentary evidence of anti-competitive manipulation they found was so overwhelming that, to read it, one almost becomes embarrassed for the banks. “It’s just amazing how Libor fixing can make you that much money,” chirped one yen trader. “Pure manipulation going on,” wrote another.
+Yet despite so many instances of at least attempted manipulation, the banks mostly skated. Barclays got off with a relatively minor fine in the $450 million range, UBS was stuck with $1.5 billion in penalties, and RBS was forced to give up $615 million. Apart from a few low-level flunkies overseas, no individual involved in this scam that impacted nearly everyone in the industrialized world was even threatened with criminal prosecution.
+Two of America’s top law-enforcement officials, Attorney General Eric Holder and former Justice Department Criminal Division chief Lanny Breuer, confessed that it’s dangerous to prosecute offending banks because they are simply too big. Making arrests, they say, might lead to “collateral consequences” in the economy.
+The relatively small sums of money extracted in these settlements did not go toward reparations for the cities, towns and other victims who lost money due to Libor manipulation. Instead, it flowed mindlessly into government coffers. So it was left to towns and cities like Baltimore (which lost money due to fluctuations in their municipal investments caused by Libor movements), pensions like the New Britain, Connecticut, Firefighters’ and Police Benefit Fund, and other foundations – and even individuals (billionaire real-estate developer Sheldon Solow, who filed his own suit in February, claims that his company lost $450 million because of Libor manipulation) – to sue the banks for damages.
+One of the biggest Libor suits was proceeding on schedule when, early in March, an army of superstar lawyers working on behalf of the banks descended upon federal judge Naomi Buchwald in the Southern District of New York to argue an extraordinary motion to dismiss. The banks’ legal dream team drew from heavyweight Beltway-connected firms like Boies Schiller (you remember David Boies represented Al Gore), Davis Polk (home of top ex-regulators like former SEC enforcement chief Linda Thomsen) and Covington & Burling, the onetime private-practice home of both Holder and Breuer.
+The presence of Covington & Burling in the suit – representing, of all companies, Citigroup, the former employer of current Treasury Secretary Jack Lew – was particularly galling. Right as the Libor case was being dismissed, the firm had hired none other than Lanny Breuer, the same Lanny Breuer who, just a few months before, was the assistant attorney general who had balked at criminally prosecuting UBS over Libor because, he said, “Our goal here is not to destroy a major financial institution.”
+In any case, this all-star squad of white-shoe lawyers came before Buchwald and made the mother of all audacious arguments. Robert Wise of Davis Polk, representing Bank of America, told Buchwald that the banks could not possibly be guilty of anti- competitive collusion because nobody ever said that the creation of Libor was competitive. “It is essential to our argument that this is not a competitive process,” he said. “The banks do not compete with one another in the submission of Libor.”
+If you squint incredibly hard and look at the issue through a mirror, maybe while standing on your head, you can sort of see what Wise is saying. In a very theoretical, technical sense, the actual process by which banks submit Libor data – 18 geeks sending numbers to the British Bankers’ Association offices in London once every morning – is not competitive per se.
+But these numbers are supposed to reflect interbank-loan prices derived in a real, competitive market. Saying the Libor submission process is not competitive is sort of like pointing out that bank robbers obeyed the speed limit on the way to the heist. It’s the silliest kind of legal sophistry.
+But Wise eventually outdid even that argument, essentially saying that while the banks may have lied to or cheated their customers, they weren’t guilty of the particular crime of antitrust collusion. This is like the old joke about the lawyer who gets up in court and claims his client had to be innocent, because his client was committing a crime in a different state at the time of the offense.
+“The plaintiffs, I believe, are confusing a claim of being perhaps deceived,” he said, “with a claim for harm to competition.”
+Judge Buchwald swallowed this lunatic argument whole and dismissed most of the case. Libor, she said, was a “cooperative endeavor” that was “never intended to be competitive.” Her decision “does not reflect the reality of this business, where all of these banks were acting as competitors throughout the process,” said the antitrust lawyer Sokol. Buchwald made this ruling despite the fact that both the U.S. and British governments had already settled with three banks for billions of dollars for improper manipulation, manipulation that these companies admitted to in their settlements.
+Michael Hausfeld of Hausfeld LLP, one of the lead lawyers for the plaintiffs in this Libor suit, declined to comment specifically on the dismissal. But he did talk about the significance of the Libor case and other manipulation cases now in the pipeline.
+“It’s now evident that there is a ubiquitous culture among the banks to collude and cheat their customers as many times as they can in as many forms as they can conceive,” he said. “And that’s not just surmising. This is just based upon what they’ve been caught at.”
+Greenberger says the lack of serious consequences for the Libor scandal has only made other kinds of manipulation more inevitable. “There’s no therapy like sending those who are used to wearing Gucci shoes to jail,” he says. “But when the attorney general says, ‘I don’t want to indict people,’ it’s the Wild West. There’s no law.”
+the problem is, a number of markets feature the same infrastructural weakness that failed in the Libor mess. In the case of interest-rate swaps and the ISDAfix benchmark, the system is very similar to Libor, although the investigation into these markets reportedly focuses on some different types of improprieties.
+Though interest-rate swaps are not widely understood outside the finance world, the root concept actually isn’t that hard. If you can imagine taking out a variable-rate mortgage and then paying a bank to make your loan payments fixed, you’ve got the basic idea of an interest-rate swap.
+In practice, it might be a country like Greece or a regional government like Jefferson County, Alabama, that borrows money at a variable rate of interest, then later goes to a bank to “swap” that loan to a more predictable fixed rate. In its simplest form, the customer in a swap deal is usually paying a premium for the safety and security of fixed interest rates, while the firm selling the swap is usually betting that it knows more about future movements in interest rates than its customers.
+Prices for interest-rate swaps are often based on ISDAfix, which, like Libor, is yet another of these privately calculated benchmarks. ISDAfix’s U.S. dollar rates are published every day, at 11:30 a.m. and 3:30 p.m., after a gang of the same usual-suspect megabanks (Bank of America, RBS, Deutsche, JPMorgan Chase, Barclays, etc.) submits information about bids and offers for swaps.
+And here’s what we know so far: The CFTC has sent subpoenas to ICAP and to as many as 15 of those member banks, and plans to interview about a dozen ICAP employees from the company’s office in Jersey City, New Jersey. Moreover, the International Swaps and Derivatives Association, or ISDA, which works together with ICAP (for U.S. dollar transactions) and Thomson Reuters to compute the ISDAfix benchmark, has hired the consulting firm Oliver Wyman to review the process by which ISDAfix is calculated. Oliver Wyman is the same company that the British Bankers’ Association hired to review the Libor submission process after that scandal broke last year. The upshot of all of this is that it looks very much like ISDAfix could be Libor all over again.
+“It’s obviously reminiscent of the Libor manipulation issue,” Darrell Duffie, a finance professor at Stanford University, told reporters. “People may have been naive that simply reporting these rates was enough to avoid manipulation.”
+And just like in Libor, the potential losers in an interest-rate-swap manipulation scandal would be the same sad-sack collection of cities, towns, companies and other nonbank entities that have no way of knowing if they’re paying the real price for swaps or a price being manipulated by bank insiders for profit. Moreover, ISDAfix is not only used to calculate prices for interest-rate swaps, it’s also used to set values for about $550 billion worth of bonds tied to commercial real estate, and also affects the payouts on some state-pension annuities.
+So although it’s not quite as widespread as Libor, ISDAfix is sufficiently power-jammed into the world financial infrastructure that any manipulation of the rate would be catastrophic – and a huge class of victims that could include everyone from state pensioners to big cities to wealthy investors in structured notes would have no idea they were being robbed.
+“How is some municipality in Cleveland or wherever going to know if it’s getting ripped off?” asks Michael Masters of Masters Capital Management, a fund manager who has long been an advocate of greater transparency in the derivatives world. “The answer is, they won’t know.”
+Worse still, the CFTC investigation apparently isn’t limited to possible manipulation of swap prices by monkeying around with ISDAfix. According to reports, the commission is also looking at whether or not employees at ICAP may have intentionally delayed publication of swap prices, which in theory could give someone (bankers, cough, cough) a chance to trade ahead of the information.
+Swap prices are published when ICAP employees manually enter the data on a computer screen called “19901.” Some 6,000 customers subscribe to a service that allows them to access the data appearing on the 19901 screen.
+The key here is that unlike a more transparent, regulated market like the New York Stock Exchange, where the results of stock trades are computed more or less instantly and everyone in theory can immediately see the impact of trading on the prices of stocks, in the swap market the whole world is dependent upon a handful of brokers quickly and honestly entering data about trades by hand into a computer terminal.
+Any delay in entering price data would provide the banks involved in the transactions with a rare opportunity to trade ahead of the information. One way to imagine it would be to picture a racetrack where a giant curtain is pulled over the track as the horses come down the stretch – and the gallery is only told two minutes later which horse actually won. Anyone on the right side of the curtain could make a lot of smart bets before the audience saw the results of the race.
+At ICAP, the interest-rate swap desk, and the 19901 screen, were reportedly controlled by a small group of 20 or so brokers, some of whom were making millions of dollars. These brokers made so much money for themselves the unit was nicknamed “Treasure Island.”
+Already, there are some reports that brokers of Treasure Island did create such intentional delays. Bloomberg interviewed a former broker who claims that he watched ICAP brokers delay the reporting of swap prices. “That allows dealers to tell the brokers to delay putting trades into the system instead of in real time,” Bloomberg wrote, noting the former broker had “witnessed such activity firsthand.” An ICAP spokesman has no comment on the story, though the company has released a statement saying that it is “cooperating” with the CFTC’s inquiry and that it “maintains policies that prohibit” the improper behavior alleged in news reports.
+The idea that prices in a $379 trillion market could be dependent on a desk of about 20 guys in New Jersey should tell you a lot about the absurdity of our financial infrastructure. The whole thing, in fact, has a darkly comic element to it. “It’s almost hilarious in the irony,” says David Frenk, director of research for Better Markets, a financial-reform advocacy group, “that they called it ISDAfix.”
+after scandals involving libor and, perhaps, ISDAfix, the question that should have everyone freaked out is this: What other markets out there carry the same potential for manipulation? The answer to that question is far from reassuring, because the potential is almost everywhere. From gold to gas to swaps to interest rates, prices all over the world are dependent upon little private cabals of cigar-chomping insiders we’re forced to trust.
+“In all the over-the-counter markets, you don’t really have pricing except by a bunch of guys getting together,” Masters notes glumly.
+That includes the markets for gold (where prices are set by five banks in a Libor-ish teleconferencing process that, ironically, was created in part by N M Rothschild & Sons) and silver (whose price is set by just three banks), as well as benchmark rates in numerous other commodities – jet fuel, diesel, electric power, coal, you name it. The problem in each of these markets is the same: We all have to rely upon the honesty of companies like Barclays (already caught and fined $453 million for rigging Libor) or JPMorgan Chase (paid a $228 million settlement for rigging municipal-bond auctions) or UBS (fined a collective $1.66 billion for both muni-bond rigging and Libor manipulation) to faithfully report the real prices of things like interest rates, swaps, currencies and commodities.
+All of these benchmarks based on voluntary reporting are now being looked at by regulators around the world, and God knows what they’ll find. The European Federation of Financial Services Users wrote in an official EU survey last summer that all of these systems are ripe targets for manipulation. “In general,” it wrote, “those markets which are based on non-attested, voluntary submission of data from agents whose benefits depend on such benchmarks are especially vulnerable of market abuse and distortion.”
+Translation: When prices are set by companies that can profit by manipulating them, we’re fucked.
+“You name it,” says Frenk. “Any of these benchmarks is a possibility for corruption.”
+The only reason this problem has not received the attention it deserves is because the scale of it is so enormous that ordinary people simply cannot see it. It’s not just stealing by reaching a hand into your pocket and taking out money, but stealing in which banks can hit a few keystrokes and magically make whatever’s in your pocket worth less. This is corruption at the molecular level of the economy, Space Age stealing – and it’s only just coming into view.
+This story is from the May 9th, 2013 issue of Rolling Stone.
+للحصول على الاخبار بشكل سريع يمكنكم الاشتراك بالصفحة الرئيسية للموقع على فيس بوك عبر الرابط:
+https://www.facebook.com/all4syria.org
+Comments Closed
+Comments are closed. You will not be able to post a comment in this post.
+أخبار محلية
+الثوار يطردون (داعش) من قريتين شمال حلب ويفجرون مفخخة
+Posted on 2016/05/01 | No Comments
+(فرج بيرقدار) و(فواز القادري) يحصلان على جائزة الشاعر حامد بدرخان
+Posted on 2016/05/01 | No Comments
+جيش الإسلام: نقبل بفصل القضايا العالقة بيننا وبين من بغى علينا عبر قضاء مستقل
+Posted on 2016/05/01 | No Comments
+طائرات تلقي مساعدات لقوات النظام بدير الزور وأخرى تقتل الأطفال
+Posted on 2016/05/01 | No Comments
+﻿علويات سوريات يرتدين الحجاب ضمن احتفال مؤيد لبشار الأسد في حماة لإظهار شعبية كبيرة له بين السنة
+Posted on 2016/05/01 | No Comments
+63 ألف (فيسبوكي) يعطّلون حساباتهم تضامناً مع حلب
+Posted on 2016/05/01 | No Comments
+سوريون مسيحيون من اجل السلام تدين قصف النظام وحلفاؤه لحلب
+Posted on 2016/04/30 | No Comments
+فيلق الرحمن: مستعدون لوقف إطلاق النار في الغوطة الشرقية
+Posted on 2016/04/30 | No Comments
+اللاذقية بلا حواجز أمنية بعد خمس سنوات
+Posted on 2016/04/30 | No Comments
+روان قدّاح حرّة بعد 4 سنوات
+Posted on 2016/04/30 | No Comments
+انتخابات حماة… شبيحة ساقطون وبعثيون صاعدون
+Posted on 2016/04/30 | No Comments
+مؤسسات إغاثية وإنسانية تعلّق نشاطها في حلب
+Posted on 2016/04/30 | No Comments
+النظام يشكل لجنة من الأفرع الأمنية لتوزيع المساعدات في دير الزور
+Posted on 2016/04/30 | No Comments
+المجلس الوطني الكردي: استعراض الجثث في عفرين جريمة كبرى وعمل أرعن
+Posted on 2016/04/30 | No Comments
+حلب بلا ماء بسبب غارات طيران النظام
+Posted on 2016/04/30 | No Comments
+9 قتلى وجرحى بتفجير استهدف حاجزاً لقوات (أسايش) في القامشلي
+Posted on 2016/04/30 | No Comments
+بيان الكتلة الديمقراطية حول أحداث حلب
+Posted on 2016/04/30 | No Comments
+استهدفت أكثر من 14 ألف طفل… انتهاء حملة التلقيح ضد شلل الأطفال في ريف حلب الغربي
+Posted on 2016/04/30 | No Comments
+غياب الأدوية النوعية يهدد حياة الأهالي في المناطق المحررة
+Posted on 2016/04/30 | No Comments
+الجربا : أي حل سياسي وحلب تموت ؟!
+Posted on 2016/04/30 | No Comments
+أخبار عربية
+حزب الله يهرب أبناء قياداته إلى أوروبا لمنع إرسالهم لسوريا
+Posted on 2016/05/01 | No Comments
+قطر تطلب عقد اجتماع طارئ لجامعة العربية لبحث الأوضاع بحلب السورية
+Posted on 2016/05/01 | No Comments
+مجلس التعاون: قصف النظام على حلب جريمة ضد الإنسانية
+Posted on 2016/05/01 | No Comments
+حملة إلكترونية بمصر لتعطيل حسابات فيسبوك تضامنا مع حلب
+Posted on 2016/05/01 | No Comments
+الجامعة العربية تدين القصف (الوحشي) الذي استهدف مستشفى (القدس) في حلب
+Posted on 2016/05/01 | No Comments
+السنيورة: دماء الأبرياء في حلب جريمة في اعناق المجتمع الدولي
+Posted on 2016/04/30 | No Comments
+الأردن.. سوريون (خارج المخيمات) يشكون (عدم كفاية) المساعدات
+Posted on 2016/04/30 | No Comments
+مجموعة بن لادن السعودية تستغني عن 50 ألفاً من موظفيها
+Posted on 2016/04/30 | No Comments
+صحيفة السياسة: (حزب الله) يشتري سلاح السنة لتأمين مناطقه
+Posted on 2016/04/29 | No Comments
+(الإمارات في دليل الخليج) تاريخ عام ومُفصل منذ 1750 وما بعدها
+Posted on 2016/04/29 | No Comments
+نوفل معروف الدواليبي: نداء عاجل الى الملك سلمان بن عبد العزيز
+Posted on 2016/04/28 | No Comments
+مصر تمنع زياد الرحباني من دخول أراضيها
+Posted on 2016/04/28 | No Comments
+أخبار دولية
+6 قنوات إيرانية تبثّ برامجها من تل أبيب
+Posted on 2016/05/01 | No Comments
+روسيا: لن نطلب من بشار الأسد وقف القصف على حلب
+Posted on 2016/05/01 | No Comments
+خبراء: الحرب على حلب استباقية بهدف قطع التواصل بين سوريا الحرّة وتركيا
+Posted on 2016/05/01 | No Comments
+كيري يتوجه إلى جنيف وعلى أجندته الأزمة السورية وسبل حلّها
+Posted on 2016/05/01 | No Comments
+داود أوغلو: ليعلم من أمطروا حلب بالقنابل أنها ستتحرر
+Posted on 2016/05/01 | No Comments
+أحداث حلب تطارد مؤسس فيسبوك.. ما الذي يريدهُ هؤلاء من مارك؟
+Posted on 2016/05/01 | No Comments
+“أطباء لاجل حقوق الانسان” تمنح جائزتها السنوية لأيمن أصفري وعقيلته
+Posted on 2016/04/30 | No Comments
+موقع إيراني: شعب سوريا حفيد بني أمية وحربه تهيئ للمهدي
+Posted on 2016/04/30 | No Comments
+داود أوغلو: لن نغلق أبوابنا في وجه اللاجئين
+Posted on 2016/04/30 | No Comments
+غوغل تواجه أول عقوبة أوروبية
+Posted on 2016/04/30 | No Comments
+بعد صدور نسخته الخمسون.. مجموعة حقائق هامة عن جوجل كروم
+Posted on 2016/04/30 | No Comments
+ميزات معاودة الاتصال والبريد الصوتي تصل قريبا إلى WhatsApp
+Posted on 2016/04/30 | No Comments
+About Arras WordPress Theme
+حقوق النشر محفوظة لكلنا شركاء في الوطن.

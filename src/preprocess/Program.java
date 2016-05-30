@@ -47,10 +47,8 @@ public class Program {
     public static String stemmerName = "";
 
     public static void main(String[] args) {
-
+        //stemmerName = "english";
         stemmerName = "arabic";
-
-        //stemmerName = "arabic";
         String org_folder = "English_Corpus/";
         org_folder = "Arabic_Corpus/";
         boolean removeStopWord = true;

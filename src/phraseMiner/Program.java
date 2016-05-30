@@ -16,7 +16,11 @@ public class Program {
     public static String main_folder = "./";
     public static String corpora_folder = main_folder + "corpora/";
     public static String original_folder = corpora_folder + "English_Corpus/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
-
+    public static String rawFileFoder = "./PhraseMiner/topicalPhrases/rawFiles/";
+    public static String outputFileFoder = "./PhraseMiner/topicalPhrases/output/outputFiles/";
+    public static String batchesmainFolder = "./PhraseMiner/topicalPhrases/";
+    public static String root_PhraseMinder_output_folder = "./PhraseMiner_Output/";
+    public static String map_object_folder = "./ObjectSerDesr/";
 
     public static String[] folderNames;
 
@@ -24,11 +28,12 @@ public class Program {
         main_folder = "./";
         corpora_folder = main_folder + "corpora/";
         original_folder = corpora_folder + "ph3/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
-
-        run(original_folder);
+        String stemmClass = "english";
+        stemmClass = "arabic";
+        run(original_folder,stemmClass);
     }
 
-    public static void run(String org_folder) {
+    public static void run(String org_folder,String stemmClass) {
         original_folder = org_folder;
 
 
@@ -37,10 +42,20 @@ public class Program {
 
         try {
             FileUtils.deleteDirectory(new File(PhraseMiner_Folder));
+            FileUtils.deleteDirectory(new File(rawFileFoder));
+            FileUtils.deleteDirectory(new File(outputFileFoder));
+            deleteFileWithAnExtension(batchesmainFolder,".bat");
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         initialize_folder(PhraseMiner_Folder);
+        initialize_folder(rawFileFoder);
+        initialize_folder(outputFileFoder);
+        initialize_folder(map_object_folder);
+
         for(String str:folderNames)
         {
             String a_folder_name = PhraseMiner_Folder + str;
@@ -50,26 +65,25 @@ public class Program {
         {
             doPhraseMining(a_folder);
         }
-
-
-        System.out.println("Now I am trying to run an script");
-        File file = new File("./PhraseMiner/topicalPhrases/FamilyWomenRisingKids.bat");
-        String batchFileName = file.getAbsolutePath();
-        //String path="cmd /c start C:/Users/Sultan/IdeaProjects/JavaArabic/PhraseMiner/topicalPhrases/win_run.bat";
-        String path = "cmd /c start /wait " + batchFileName;
-        Runtime rn = Runtime.getRuntime();
-        try {
-            final Process pr = rn.exec(path);
-            pr.waitFor();
-            //System.out.println("exitVal = " + exitVal);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
     }
 
+    public static void deleteFileWithAnExtension(String folderName,String an_extension)
+
+    {
+
+        File folder = new File(folderName);
+        File[] listOfFiles = folder.listFiles();
+
+
+        for (int i = 0; i < listOfFiles.length; i++)
+        {
+
+            File file = listOfFiles[i];
+            if (file.isFile() && file.getName().endsWith(an_extension)) {
+                file.delete();
+            }
+        }
+    }
     public static void doPhraseMining(String a_folder)
     {
         System.out.println("Phrase Mining for " +a_folder );
@@ -80,6 +94,31 @@ public class Program {
         fullpath_file_name = fullpath_file_name.replace("\\.","");
         System.out.println(fullpath_file_name);
         create_batch_file(a_folder,fullpath_file_name);
+        // Execuiting:
+
+        System.out.println("Now running an script");
+        String relfileName = batchesmainFolder+a_folder.substring(0,a_folder.length()-1)+".bat";
+        File file = new File(relfileName);
+        String batchFileNameFull = file.getAbsolutePath();
+        batchFileNameFull = batchFileNameFull.replace("\\.","");
+        //String path="cmd /c start C:/Users/Sultan/IdeaProjects/JavaArabic/PhraseMiner/topicalPhrases/win_run.bat";
+
+        String path = "cmd /c start /wait " + batchFileNameFull;
+        System.out.println("Execuiting: " + path);
+        Runtime rn = Runtime.getRuntime();
+        try {
+            final Process pr = rn.exec(path);
+            pr.waitFor();
+            //System.out.println("exitVal = " + exitVal)
+            initialize_folder(root_PhraseMinder_output_folder+a_folder);
+            copyTextFromSrcToDestFolder(outputFileFoder,root_PhraseMinder_output_folder+a_folder);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public static void write_list_to_file(String pfileName,ArrayList<String> p_lst)
@@ -111,7 +150,7 @@ public class Program {
     {
         System.out.println("Creating "+a_folder +"batch file");
 
-        String a_batch_file_name = "./PhraseMiner/topicalPhrases/"+a_folder.substring(0,a_folder.length()-1)+".bat";
+        String a_batch_file_name = batchesmainFolder+a_folder.substring(0,a_folder.length()-1)+".bat";
         ArrayList<String> lines_r = readFileToList("./tmp/base.bat");
         ArrayList<String> lines = new ArrayList<String>();
         int count = 1;
@@ -194,5 +233,55 @@ public class Program {
         arr_of_fodler = new String[list_of_folders.size()];
         arr_of_fodler = (String[]) list_of_folders.toArray(arr_of_fodler);
         return arr_of_fodler;
+    }
+
+    public static void copyTextFromSrcToDestFolder(String originalFolder,
+                                                   String targetFolder)
+    {
+        File folder = new File(originalFolder);
+        File[] listOfFiles = folder.listFiles();
+        ArrayList<String> a_list = new ArrayList<String>();
+
+        for (int i = 0; i < listOfFiles.length; i++) {
+            File file = listOfFiles[i];
+            if (file.isFile() && file.getName().endsWith(".txt")) {
+                try {
+                    String content = FileUtils.readFileToString(file,"UTF-8");
+                    String fileName = targetFolder + file.getName();
+                    writeToFile(fileName,content);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+    /* do somthing with content */
+            }
+        }
+
+    }
+
+
+    public static void writeToFile(String fileName, String str)
+    {
+        try
+        {
+            // create new file
+            File file = new File(fileName);
+
+            // if file doesnt exists, then create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            // write in file
+            bw.write(str);
+            bw.flush();
+            bw.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
     }
 }

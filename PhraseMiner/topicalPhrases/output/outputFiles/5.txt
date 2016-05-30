@@ -1,7 +1,0 @@
-box office	63
-horror film	61
-takes place	29
-half hour	16
-supporting cast	11
-hour half	11
-film horror	6

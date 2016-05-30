@@ -18,6 +18,7 @@ public class EncodeTextMain {
     public static Map code_to_word = new HashMap<String,String>();
     public static String serialize_maps_fileName = "./ObjectSerDesr/Maps.ser";
 
+
     public static void main(String args[])
     {
         System.out.println("Hello World!");
@@ -32,6 +33,12 @@ public class EncodeTextMain {
         SerializeMaps();
     }
 
+    public static void init_all()
+    {
+        word_to_code = new HashMap<String,String>();
+        code_to_word = new HashMap<String,String>();
+
+    }
     public static void SerializeMaps()
     {
         MapsObject mo = new MapsObject(word_to_code,code_to_word);
@@ -76,7 +83,7 @@ public class EncodeTextMain {
             // System.out.println(CIPSPrefexIt(oldStr)+ " | " + CIPSPrefexIt(newStr));
             System.out.println(NameUtilityGenerator.getNextName());
         }
-         // returns ['A']
+        // returns ['A']
     }
 
     public static void encode_file(String file_org,String file_filtered, String file_endoced)
