@@ -1,6 +1,9 @@
 @echo off
-REM @set inputFile=.\PhraseMiner\topicalPhrases\TopicalPhrases\rawFiles\mod-Arabic.txt
-@set inputFile=.\PhraseMiner\topicalPhrases\TopicalPhrases\rawFiles\ph3.txt
+echo %cd%
+cd PhraseMiner/topicalPhrases
+echo 'changing fodler'
+echo %cd%
+@set inputFile=C:\Users\Sultan\IdeaProjects\JavaArabic\PhraseMiner\topicalPhrases\rawFiles\ph3.txt
 @set minsup=10
 @set thresh=6
 @set maxPattern=5
@@ -8,7 +11,7 @@ REM @set inputFile=.\PhraseMiner\topicalPhrases\TopicalPhrases\rawFiles\mod-Arab
 @set topicModel=6
 echo 'Sultan'
 echo %cd%
-cd .\PhraseMiner\topicalPhrases\TopicalPhrases\
+cd TopicalPhrases
 echo %cd%
 echo Data preparing...
 call win_runDataPreparation.bat %inputFile%

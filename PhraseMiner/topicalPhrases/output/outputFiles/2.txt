@@ -1,8 +1,20 @@
-cipsbro cipsd	55
-cipscl cipscm cipscn cipsco cipsbd	50
-cipsaq cipsce cipscf cipscg cipss	50
-cipsbz cipsca cipscb cipscc cipscd	50
-cipscp cipscq cipscr cipscs	46
-cipscp cipscq cipscr cipscs cipsct	4
-cipscc cipscd	2
-cipsaqe cipsagea cipsageb cipscd	1
+bad guy	125
+bad movie	104
+running time	62
+waste time	61
+urban legend	51
+big screen	50
+falls love	47
+spend time	47
+screen time	46
+comic book	43
+blair witch	42
+ten minutes	40
+movie bad	30
+guy bad	9
+time wasting	3
+time running	3
+time screen	1
+time spend	1
+witch blair	1
+screen big	1

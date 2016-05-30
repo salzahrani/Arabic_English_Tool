@@ -1,5 +1,5 @@
-cipsali cipslzw	80
-cipsbt cipsbu cipsbv cipsbw cipsbx	50
-cipsdmv cipsdmw	43
-cipscvw cipscvx	7
-cipsbn cipsbo cipsbp cipsbq cipsbr	1
+high school	99
+van damme	66
+science fiction	49
+years ago	21
+ago years	1
