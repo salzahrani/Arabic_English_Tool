@@ -1,0 +1,11 @@
+star wars	122
+phantom menace	56
+united states	52
+starship troopers	44
+saving private ryan	40
+tom hanks	32
+men black	27
+private ryan	11
+black men	7
+star trek	2
+subject matter	1

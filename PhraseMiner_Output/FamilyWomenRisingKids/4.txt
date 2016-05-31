@@ -1,0 +1,6 @@
+high school	99
+romantic comedy	51
+urban legend	51
+falls love	17
+supporting cast	12
+takes place	10

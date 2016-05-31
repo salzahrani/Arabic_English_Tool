@@ -16,13 +16,14 @@ public class Program {
     public static String main_folder = "./";
     public static String corpora_folder = main_folder + "corpora/";
     public static String original_folder = corpora_folder + "English_Corpus/";//"original/" ;// "original/";"movie_reviews/" /// here where you change
-    public static String rawFileFoder = "./PhraseMiner/topicalPhrases/rawFiles/";
-    public static String outputFileFoder = "./PhraseMiner/topicalPhrases/output/outputFiles/";
+    public static String rawFile_folder = "./PhraseMiner/topicalPhrases/rawFiles/";
+    public static String outputfile_folder = "./PhraseMiner/topicalPhrases/output/outputFiles/";
     public static String batchesmainFolder = "./PhraseMiner/topicalPhrases/";
     public static String root_PhraseMinder_output_folder = "./PhraseMiner_Output/";
     public static String map_object_folder = "./ObjectSerDesr/";
 
     public static String[] folderNames;
+    public static String stemmCLass = "";
 
     public static void main(String[] args) {
         main_folder = "./";
@@ -33,17 +34,19 @@ public class Program {
         run(original_folder,stemmClass);
     }
 
-    public static void run(String org_folder,String stemmClass) {
+    public static void run(String org_folder,String pstemmClass) {
         original_folder = org_folder;
 
 
+        stemmCLass = pstemmClass;
         original_folder = org_folder;
         folderNames = getFoldersNames();
-
+        if(stemmCLass.equals("arabic"))
+            EncodeTextMain.init_all();
         try {
             FileUtils.deleteDirectory(new File(PhraseMiner_Folder));
-            FileUtils.deleteDirectory(new File(rawFileFoder));
-            FileUtils.deleteDirectory(new File(outputFileFoder));
+            FileUtils.deleteDirectory(new File(rawFile_folder));
+            FileUtils.deleteDirectory(new File(outputfile_folder));
             deleteFileWithAnExtension(batchesmainFolder,".bat");
 
 
@@ -52,8 +55,8 @@ public class Program {
         }
 
         initialize_folder(PhraseMiner_Folder);
-        initialize_folder(rawFileFoder);
-        initialize_folder(outputFileFoder);
+        initialize_folder(rawFile_folder);
+        initialize_folder(outputfile_folder);
         initialize_folder(map_object_folder);
 
         for(String str:folderNames)
@@ -63,9 +66,14 @@ public class Program {
         }
         for(String a_folder:folderNames)
         {
+
             doPhraseMining(a_folder);
         }
     }
+
+
+
+
 
     public static void deleteFileWithAnExtension(String folderName,String an_extension)
 
@@ -88,8 +96,32 @@ public class Program {
     {
         System.out.println("Phrase Mining for " +a_folder );
         String fldr_name  = original_folder + a_folder;
-        String file_name = "./PhraseMiner/topicalPhrases/rawFiles/"+a_folder.substring(0,a_folder.length()-1)+".txt";
+        String file_name = "./PhraseMiner/topicalPhrases/rawFiles/"+
+                a_folder.substring(0,a_folder.length()-1)+
+                ".txt";
         Generate_one_file.run(fldr_name,file_name);
+        //
+        //
+        if(stemmCLass.equals("arabic"))
+        {
+            String file_s = "./PhraseMiner/topicalPhrases/rawFiles/"+
+                    a_folder.substring(0,a_folder.length()-1)+
+                    ".txt";
+            String file_encoeded = "./PhraseMiner/topicalPhrases/rawFiles/"+
+                    a_folder.substring(0,a_folder.length()-1)+
+                    "_encoded"+".txt";
+            String tmp_file = "./tmp/ph2.txt";
+            EncodeTextMain.encode_file(file_s,tmp_file,  file_encoeded);
+            EncodeTextMain.SerializeMaps();
+
+        }
+        //
+        //
+        file_name = "./PhraseMiner/topicalPhrases/rawFiles/"+
+                a_folder.substring(0,a_folder.length()-1)+
+                (stemmCLass.equals("arabic")?"_encoded":"")+
+                ".txt";
+
         String fullpath_file_name = (new File(file_name)).getAbsolutePath();
         fullpath_file_name = fullpath_file_name.replace("\\.","");
         System.out.println(fullpath_file_name);
@@ -111,7 +143,15 @@ public class Program {
             pr.waitFor();
             //System.out.println("exitVal = " + exitVal)
             initialize_folder(root_PhraseMinder_output_folder+a_folder);
-            copyTextFromSrcToDestFolder(outputFileFoder,root_PhraseMinder_output_folder+a_folder);
+            if(stemmCLass.equals("arabic"))
+            {
+                DecodeAFolder.deserializeMaps();
+                initialize_folder(outputfile_folder+"decodedFiles/");
+                DecodeAFolder.decoded_folder(outputfile_folder);
+            }
+            copyTextFromSrcToDestFolder(outputfile_folder+
+                    (stemmCLass.equals("arabic")?"decodedFiles/":"")
+                    ,root_PhraseMinder_output_folder+a_folder);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
