@@ -1,6 +1,11 @@
-high school	99
-romantic comedy	51
-urban legend	51
-falls love	17
-supporting cast	12
-takes place	10
+bad guy	125
+bad movie	104
+box office	63
+hong kong	44
+bruce willis	43
+ten minutes	40
+plot twists	38
+real life	33
+movie bad	30
+guy bad	9
+twist plot	2

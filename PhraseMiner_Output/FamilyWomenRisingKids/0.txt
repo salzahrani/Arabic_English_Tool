@@ -1,9 +1,3 @@
-van damme	66
-action sequences	56
-batman robin	54
-action scenes	48
-fight scenes	42
-action film	39
-film action	3
-scenes fights	2
-scenes action	1
+blair witch	42
+comic book	35
+witch blair	1
