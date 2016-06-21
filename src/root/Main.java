@@ -13,8 +13,8 @@ public class Main
 
             preprocess.Program  prep_p = new preprocess.Program();
 
-            String stemmerName = "english";
-            //String stemmerName = "arabic";
+            //String stemmerName = "english";
+            String stemmerName = "arabic";
 
             String org_folder = "English_Corpus/";
             //String org_folder = "Arabic_Corpus/";
@@ -40,12 +40,13 @@ public class Main
 
             phraseMiner.Program p_phm = new phraseMiner.Program();
 
+            p_phm.isBatch = false; // running shell in unix
             p_phm.run(original_folder,stemmerName);
 
 
 
             //LDA configuration...
-
+            /*
             String stopfileName = "";
             if(stemmerName.equals("english"))
                 stopfileName = "./Stoplists/english_stoplist.txt";
@@ -60,6 +61,8 @@ public class Main
 
             malletLDA.Program m_p = new malletLDA.Program();
             m_p.run(original_folder,stopfileName,numberOfIteration,sizes,numTopics,maxRnak);
+
+            */
 
 
         }

@@ -3,7 +3,7 @@ echo %cd%
 cd PhraseMiner/topicalPhrases
 echo 'changing fodler'
 echo %cd%
-@set inputFile=C:\Users\Sultan\IdeaProjects\JavaArabic\PhraseMiner\topicalPhrases\rawFiles\FamilyWomenRisingKids.txt
+@set inputFile=C:\Users\Sultan\IdeaProjects\JavaArabic\PhraseMiner\topicalPhrases\rawFiles\FamilyWomenRisingKids_encoded.txt
 @set minsup=10
 @set thresh=6
 @set maxPattern=5

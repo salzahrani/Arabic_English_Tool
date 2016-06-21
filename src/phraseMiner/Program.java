@@ -21,7 +21,8 @@ public class Program {
     public static String batchesmainFolder = "./PhraseMiner/topicalPhrases/";
     public static String root_PhraseMinder_output_folder = "./PhraseMiner_Output/";
     public static String map_object_folder = "./ObjectSerDesr/";
-
+    public static boolean isBatch = true;
+    public static String batch_shellScript_ext_file = ".bat";
     public static String[] folderNames;
     public static String stemmCLass = "";
 
@@ -48,6 +49,7 @@ public class Program {
             FileUtils.deleteDirectory(new File(rawFile_folder));
             FileUtils.deleteDirectory(new File(outputfile_folder));
             deleteFileWithAnExtension(batchesmainFolder,".bat");
+            deleteFileWithAnExtension(batchesmainFolder,".sh");
 
 
         } catch (IOException e) {
@@ -129,7 +131,8 @@ public class Program {
         // Execuiting:
 
         System.out.println("Now running an script");
-        String relfileName = batchesmainFolder+a_folder.substring(0,a_folder.length()-1)+".bat";
+        batch_shellScript_ext_file = isBatch? ".bat" : ".sh" ;
+        String relfileName = batchesmainFolder+a_folder.substring(0,a_folder.length()-1)+batch_shellScript_ext_file;
         File file = new File(relfileName);
         String batchFileNameFull = file.getAbsolutePath();
         batchFileNameFull = batchFileNameFull.replace("\\.","");
@@ -190,8 +193,8 @@ public class Program {
     {
         System.out.println("Creating "+a_folder +"batch file");
 
-        String a_batch_file_name = batchesmainFolder+a_folder.substring(0,a_folder.length()-1)+".bat";
-        ArrayList<String> lines_r = readFileToList("./tmp/base.bat");
+        String a_batch_file_name = batchesmainFolder+a_folder.substring(0,a_folder.length()-1)+batch_shellScript_ext_file;
+        ArrayList<String> lines_r = readFileToList("./tmp/base"+batch_shellScript_ext_file);
         ArrayList<String> lines = new ArrayList<String>();
         int count = 1;
         for(String str:lines_r)
@@ -199,12 +202,24 @@ public class Program {
             System.out.println(count + "--" +str);
             String repstr = "";
 
+
             if(count == 6)
             {
-                repstr = "@set inputFile=" + fullpath_file_name;
-                System.out.println(count + "--" + repstr);
-                lines.add(repstr);
+                if(isBatch == true)
+                {
+                    repstr = "@set inputFile=" + fullpath_file_name;
+                    System.out.println(count + "--" + repstr);
+                    lines.add(repstr);
+                }
+                if(isBatch == false)
+                {
+                    repstr = "inputFile=" + fullpath_file_name;
+                    System.out.println(count + "--" + repstr);
+                    lines.add(repstr);
+
+                }
             }
+
             else
                 lines.add(str);
             ++count;
