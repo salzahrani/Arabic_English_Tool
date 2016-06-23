@@ -13,8 +13,8 @@ public class Main
 
             preprocess.Program  prep_p = new preprocess.Program();
 
-            //String stemmerName = "english";
-            String stemmerName = "arabic";
+            String stemmerName = "english";
+            //String stemmerName = "arabic";
 
             String org_folder = "English_Corpus/";
             //String org_folder = "Arabic_Corpus/";

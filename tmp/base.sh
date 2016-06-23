@@ -4,6 +4,7 @@ cd PhraseMiner/topicalPhrases
 pwd
 
 inputFile='../rawFiles/dblp_titles.txt'
+
 # minimum phrase frequency
 minsup=10
 #maximum size of phrase (number of words)
@@ -21,14 +22,18 @@ optimizationBurnIn=100
 alpha=2
 #optimize hyperparameters every n iterations
 optimizationInterval=50
-cd TopicalPhrases 
+cd TopicalPhrases
 #Run Data preprocessing
+chmod 777 ./runDataPreparation.sh
 ./runDataPreparation.sh $inputFile
 #Run frequent phrase mining
+chmod 777 ./runCPM.sh
 ./runCPM.sh $minsup $maxPattern $thresh
 #Run topic modeling
+chmod 777 ./runPhrLDA.sh
 ./runPhrLDA.sh $topicModel $numTopics $gibbsSamplingIterations $optimizationBurnIn $alpha $optimizationInterval
 #Run post processing (insert stop words and unstem properly)
+chmod 777 ./createUnStem.sh
 ./createUnStem.sh $inputFile $maxPattern
 #Recreate original corpus
 python unMapper.py input_dataset/input_vocFile input_dataset/input_stemMapping input_dataset_output/unmapped_phrases input_dataset_output/input_partitionedTraining.txt input_dataset_output/newPartition.txt

@@ -1,6 +1,10 @@
 #!/bin/bash
+pwd
+cd PhraseMiner/topicalPhrases
+pwd
 
 inputFile='../rawFiles/dblp_titles.txt'
+read -p "Press [Enter] key to start backup..."
 # minimum phrase frequency
 minsup=10
 #maximum size of phrase (number of words)

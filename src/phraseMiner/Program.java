@@ -73,10 +73,6 @@ public class Program {
         }
     }
 
-
-
-
-
     public static void deleteFileWithAnExtension(String folderName,String an_extension)
 
     {
@@ -127,23 +123,77 @@ public class Program {
         String fullpath_file_name = (new File(file_name)).getAbsolutePath();
         fullpath_file_name = fullpath_file_name.replace("\\.","");
         System.out.println(fullpath_file_name);
+        batch_shellScript_ext_file = isBatch ? ".bat" : ".sh" ;
+
         create_batch_file(a_folder,fullpath_file_name);
         // Execuiting:
 
         System.out.println("Now running an script");
-        batch_shellScript_ext_file = isBatch? ".bat" : ".sh" ;
+        batch_shellScript_ext_file = isBatch ? ".bat" : ".sh" ;
         String relfileName = batchesmainFolder+a_folder.substring(0,a_folder.length()-1)+batch_shellScript_ext_file;
         File file = new File(relfileName);
         String batchFileNameFull = file.getAbsolutePath();
         batchFileNameFull = batchFileNameFull.replace("\\.","");
         //String path="cmd /c start C:/Users/Sultan/IdeaProjects/JavaArabic/PhraseMiner/topicalPhrases/win_run.bat";
 
-        String path = "cmd /c start /wait " + batchFileNameFull;
+        //String path = "cmd /c start /wait " + batchFileNameFull;
+        String path =  batchFileNameFull;
+        path = path.replace("/./","/");
         System.out.println("Execuiting: " + path);
         Runtime rn = Runtime.getRuntime();
         try {
-            final Process pr = rn.exec(path);
-            pr.waitFor();
+            if(isBatch) {
+                final Process pr = rn.exec(path);
+                pr.waitFor();
+            }
+            else // unix
+            {
+                //path = "chmod u+x  "+path;
+                //ProcessBuilder pb = new ProcessBuilder(
+                //        "/bin/bash "+path);
+                //Process p = pb.start();     // Start the process.
+                //p.waitFor();
+                StringBuffer output = new StringBuffer();
+
+
+                final Process pr1 = rn.exec("chmod 777 "+path);
+                pr1.waitFor();
+                System.out.print("just finish 1 !");
+
+                BufferedReader reader =
+                        new BufferedReader(new InputStreamReader(pr1.getErrorStream()));
+
+                String line = "";
+                while ((line = reader.readLine())!= null) {
+                    output.append(line + "\n");
+                }
+
+                System.out.println("Error p1: " + output.toString());
+
+
+                output = new StringBuffer();
+
+//                String command[] = {"/bin/sh", "-c",
+//                        "gnome-terminal --execute "+path};
+                //String command[] = {"gnome-terminal", "-x", "/bin/bash", "-c", path};                //final Process pr2 = rn.exec("/bin/bash "+path);
+                String command[] = {"/bin/bash", "-c", path};                //final Process pr2 = rn.exec("/bin/bash "+path);
+                final Process pr2 = rn.exec(command);
+                pr2.waitFor();
+
+                System.out.print("just finish 2 !");
+                reader =
+                        new BufferedReader(new InputStreamReader(pr2.getInputStream()));
+
+                line = "";
+                while ((line = reader.readLine())!= null) {
+                    output.append(line + "\n");
+                }
+
+                System.out.println("Error p2: " + output.toString());
+
+
+
+            }
             //System.out.println("exitVal = " + exitVal)
             initialize_folder(root_PhraseMinder_output_folder+a_folder);
             if(stemmCLass.equals("arabic"))
@@ -153,13 +203,14 @@ public class Program {
                 DecodeAFolder.decoded_folder(outputfile_folder);
             }
             copyTextFromSrcToDestFolder(outputfile_folder+
-                    (stemmCLass.equals("arabic")?"decodedFiles/":"")
+                            (stemmCLass.equals("arabic")?"decodedFiles/":"")
                     ,root_PhraseMinder_output_folder+a_folder);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
 
 
     }
