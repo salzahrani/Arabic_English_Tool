@@ -146,7 +146,7 @@ public class Program {
                 final Process pr = rn.exec(path);
                 pr.waitFor();
             }
-            else // unix
+            else // unix, linux or mac
             {
                 //path = "chmod u+x  "+path;
                 //ProcessBuilder pb = new ProcessBuilder(
@@ -168,7 +168,7 @@ public class Program {
                     output.append(line + "\n");
                 }
 
-                System.out.println("Error p1: " + output.toString());
+                //System.out.println("Error p1: " + output.toString());
 
 
                 output = new StringBuffer();

@@ -4,8 +4,8 @@ high school	92
 star trek	85
 pulp fiction	78
 sci fi	78
-takes place	74
 horror film	74
+takes place	74
 fall love	74
 main characters	73
 real life	73
@@ -32,8 +32,8 @@ running time	50
 boogie nights	49
 point view	48
 watching film	48
-young man	48
 action movie	48
+young man	48
 love story	48
 hong kong	46
 toy story	45
@@ -43,10 +43,10 @@ martial arts	44
 great film	43
 tells story	43
 screen time	43
+kung fu	42
 character development	42
 serial killer	42
 computer generated	42
-kung fu	42
 oscar nomination	41
 action sequences	40
 good time	40
@@ -75,6 +75,7 @@ good hunting	34
 woody allen	34
 big lebowski	34
 small town	34
+black white	33
 good movie	33
 mel gibson	33
 watch movie	33
@@ -84,7 +85,6 @@ pretty good	33
 plot twists	33
 top notch	33
 eddie murphy	33
-black white	33
 summer movie	33
 plays character	32
 black cauldron	32
@@ -93,8 +93,8 @@ love interest	32
 spends time	32
 las vegas	31
 matt damon	31
-dr evil	31
 enjoyed film	31
+dr evil	31
 film great	31
 previous films	31
 film ve	31
@@ -102,11 +102,11 @@ thought provoking	31
 bug life	30
 york city	30
 movie good	30
-men black	30
 bruce willis	30
+men black	30
+drunken master	29
 robin williams	29
 final destination	29
-drunken master	29
 jim carrey	29
 cameron diaz	29
 bad thing	28
@@ -128,11 +128,11 @@ life beautiful	26
 robert de niro	26
 original film	26
 film watching	26
-john malkovich	26
 plays role	26
 wild things	26
 jurassic park	26
 qui gon	26
+john malkovich	26
 de niro	25
 story told	25
 wedding singer	25
@@ -172,50 +172,50 @@ opening credits	23
 jay silent bob	23
 fight scenes	22
 supporting characters	22
-young boy	22
 steven spielberg	22
 young woman	22
 character actors	22
+making movie	22
 tommy lee jones	22
 twists turns	22
-making movie	22
 denzel washington	22
 minutes film	22
 john goodman	22
 usual suspects	22
 boiler room	22
+young boy	22
 pay attention	22
 fact film	22
 science fiction films	21
 american dream	21
+horse whisperer	21
 thirteenth floor	21
 action scenes	21
 kevin spacey	21
 darth vader	21
-horse whisperer	21
 rated pg	21
 musical score	21
 thin red	21
 city angels	21
 mike myers	21
 battle scenes	20
-denise richards	20
 van damme	20
+james bond	20
 good evil	20
 slow motion	20
 julia roberts	20
 anthony hopkins	20
 film original	20
-james bond	20
 small role	20
 kevin smith	20
-special edition	20
+drew barrymore	20
 bill murray	20
 american history	20
+special edition	20
 twenty years	20
 real people	20
-drew barrymore	20
 twenty minutes	20
+denise richards	20
 keanu reeves	19
 film fact	19
 pop culture	19
@@ -224,17 +224,17 @@ car chase	19
 dark side	19
 fifteen minutes	19
 mars attacks	19
-tom cruise	19
-sense humor	19
 role played	19
+tom cruise	19
 nice guy	19
 police officer	19
 laugh loud	19
 south park	19
+sense humor	19
 chris tucker	19
+obi wan kenobi	19
 tv series	19
 entire life	19
-obi wan kenobi	19
 matt dillon	18
 dalai lama	18
 liam neeson	18
@@ -242,8 +242,8 @@ develop characters	18
 bill paxton	18
 rocky horror	18
 disney animated feature	18
-african american	18
 morgan freeman	18
+african american	18
 samuel jackson	18
 babe pig city	18
 taxi driver	18
@@ -260,9 +260,7 @@ return jedi	18
 edward norton	17
 animated feature	17
 big budget	17
-coen brothers	17
 john cusack	17
-film makers	17
 hour half	17
 years film	17
 sweet sweetback	17
@@ -272,12 +270,14 @@ martin scorsese	17
 cast members	17
 matthew mcconaughey	17
 full monty	17
+film makers	17
 brad pitt	17
 la motta	17
 saturday night	17
 albert brooks	17
 read book	17
 ewan mcgregor	17
+coen brothers	17
 raging bull	17
 obi wan	16
 director writer	16
@@ -290,17 +290,17 @@ blair witch	15
 movie enjoyable	15
 disney animated	15
 perfect role	15
-uma thurman	15
 written directed	15
+uma thurman	15
 ba ku	14
 virtual reality	14
 blair witch project	14
 based book	14
 making film	13
-film enjoyable	13
 fun movie	13
 film features	13
 released film	13
+film enjoyable	13
 audience members	13
 answers questions	13
 writing directing	13
@@ -342,8 +342,8 @@ period time	5
 years ve	5
 study characters	5
 guy bad	5
-time good	5
 characters interesting	5
+time good	5
 nominated oscar	5
 actors character	5
 silent bob	4
@@ -366,9 +366,7 @@ carrey jim	2
 evil dr	2
 master drunken	2
 chasing car	2
-watching fun	2
 job good	2
-animation disney	2
 twists plot	2
 reality virtual	2
 piece set	2
@@ -380,6 +378,8 @@ time running	2
 characters main	2
 guy good	2
 whites blacks	2
+watching fun	2
+animation disney	2
 city dark	2
 scenes opening	2
 books comics	2
@@ -391,6 +391,7 @@ beauty life	1
 fiction science	1
 deals great	1
 attention payed	1
+project blair witch	1
 brother coens	1
 ku ba	1
 time spend	1
@@ -417,7 +418,6 @@ life entire	1
 pie differentiates american	1
 book based	1
 makers film	1
-project blair witch	1
 years twenty	1
 story true	1
 history american	1

@@ -12,8 +12,8 @@ writer director	63
 horror film	62
 falls love	61
 waste time	61
-batman robin	54
 years ago	54
+batman robin	54
 romantic comedy	51
 urban legend	51
 takes place	51
@@ -46,14 +46,14 @@ worst movie	37
 film opens	35
 hour half	35
 good thing	35
-star trek	35
 zeta jones	35
+star trek	35
 tv series	35
 las vegas	34
 big budget	34
 horror movie	34
-video game	34
 star wars	34
+video game	34
 don care	33
 rest movie	33
 opening scene	33
@@ -68,10 +68,10 @@ comic relief	31
 keanu reeves	31
 wild wild west	31
 interesting character	31
+deep rising	30
 starship troopers	30
 movie bad	30
 fbi agent	30
-deep rising	30
 independence day	30
 john travolta	30
 entire film	30
@@ -93,14 +93,14 @@ meg ryan	27
 car chases	27
 robin williams	27
 movie ve	27
-jurassic park	26
-good actors	26
 james bond	26
 plot holes	26
+jurassic park	26
 de bont	26
 jim carrey	26
 live action	26
 opening credits	26
+good actors	26
 doesn matter	25
 kind movie	25
 joel schumacher	25
@@ -139,11 +139,11 @@ blair witch	22
 american pie	22
 young woman	22
 phantom menace	22
+tommy lee jones	22
 camera work	22
 plot device	22
 wild things	22
 adam sandler	22
-tommy lee jones	22
 subject matter	22
 ten years	21
 play role	21
@@ -163,27 +163,27 @@ main problem	20
 gary sinise	20
 cast members	20
 con air	20
-los angeles	20
+morgan freeman	20
 blair witch project	20
 target audience	20
 television series	20
-soap opera	20
 kevin bacon	20
+soap opera	20
 film noir	20
 mortal kombat	20
 nice guy	20
 saturday night live	20
 sharon stone	20
-morgan freeman	20
+los angeles	20
 tim burton	20
-fifteen minutes	19
+film features	19
 video store	19
 hank azaria	19
 julia roberts	19
-film features	19
 lethal weapon	19
 monster movie	19
 star film	19
+fifteen minutes	19
 late night	19
 men black	19
 small role	19
@@ -196,13 +196,13 @@ battle scenes	18
 wing commander	18
 chris donnell	18
 basic instinct	18
+movie review	18
 talented actors	18
 mercury rising	18
 ace ventura	18
+charlize theron	18
 red planet	18
 audience members	18
-movie review	18
-charlize theron	18
 security guard	18
 liam neeson	17
 bad dialogue	17
@@ -211,7 +211,6 @@ poison ivy	17
 nicolas cage	17
 hard rain	17
 production design	17
-sean connery	17
 jean claude van damme	17
 sight gags	17
 jeff goldblum	17
@@ -223,6 +222,7 @@ steve buscemi	17
 jet li	17
 academy award	17
 bill murray	17
+sean connery	17
 jay silent bob	17
 camera angles	17
 pay attention	17
@@ -249,8 +249,8 @@ role played	12
 rated pg	12
 bad good	12
 minute running time	11
-dimensional characters	11
 movie worst	11
+dimensional characters	11
 review movie	11
 haunted house	10
 running time minutes	9
@@ -271,8 +271,8 @@ acting bad	7
 movie summer	6
 film horror	6
 movie action	6
-story love	5
 long hours	5
+story love	5
 questions answered	5
 movie kind	5
 haunting hill house	5
@@ -299,17 +299,17 @@ funny isn	2
 silent bob	2
 happened thing	2
 care don	2
-dialogue bad	2
 tommy lee	2
 wild wild	2
 black men	2
+played actors	2
 open gratuity film	2
 scenes fights	2
 audience target	2
-played actors	2
 wild west	2
 twist plot	2
 movie rest	2
+dialogue bad	2
 effects special	2
 noir film	2
 work camera	2
@@ -328,6 +328,7 @@ agent lowry fbi	1
 ideas good	1
 apes planet	1
 night live	1
+time spend	1
 scenes action	1
 witch blair	1
 scenes sex	1
@@ -337,7 +338,6 @@ grace save	1
 movie entire	1
 murray bill	1
 action live	1
-time spend	1
 movies monster	1
 scenes battle	1
 hard die	1

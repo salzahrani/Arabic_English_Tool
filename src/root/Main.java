@@ -30,7 +30,7 @@ public class Main
             prep_p.run(org_folder,stemmerName, removeStopWord,stemwords);
 
             // top frequent words unigram bigram trigram and so on:
-            int[] ngram_option = {1, 2, 3, 4,5};
+            int[] ngram_option = {1, 2, 3, 4 , 5};
             topFrequentNgram.Program p_freq = new topFrequentNgram.Program();
 
             p_freq.run(original_folder, ngram_option);
@@ -40,7 +40,7 @@ public class Main
 
             phraseMiner.Program p_phm = new phraseMiner.Program();
 
-            p_phm.isBatch = false; // running shell in unix
+            p_phm.isBatch = false; // running shell in unix/linux or mac
             p_phm.run(original_folder,stemmerName);
 
 
